@@ -7,6 +7,9 @@ defmodule DynamicRovers.Application do
   def start(_type, _args) do
     children = [
       {Registry, keys: :unique, name: DynamicRovers.Registry},
+      {DynamicRovers.HabitatFleet, []},
+      {DynamicRovers.OperationsSupervisor, []},
+      {DynamicRovers.CommunicationsSupervisor, []},
       {DynamicRovers.RoverSupervisor, []}
     ]
 

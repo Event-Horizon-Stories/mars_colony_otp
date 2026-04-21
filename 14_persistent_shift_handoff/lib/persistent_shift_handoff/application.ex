@@ -1,6 +1,4 @@
 defmodule PersistentShiftHandoff.Application do
-  # See https://hexdocs.pm/elixir/Application.html
-  # for more information on OTP Applications
   @moduledoc false
 
   use Application
@@ -8,12 +6,17 @@ defmodule PersistentShiftHandoff.Application do
   @impl true
   def start(_type, _args) do
     children = [
-      # Starts a worker by calling: PersistentShiftHandoff.Worker.start_link(arg)
-      # {PersistentShiftHandoff.Worker, arg}
+      {Registry, keys: :unique, name: PersistentShiftHandoff.Registry},
+      {Registry, keys: :duplicate, name: PersistentShiftHandoff.AlertRegistry},
+      {PersistentShiftHandoff.HabitatFleet, []},
+      {PersistentShiftHandoff.OperationsSupervisor, []},
+      {PersistentShiftHandoff.CommunicationsSupervisor, []},
+      {PersistentShiftHandoff.RoverSupervisor, []},
+      {Task.Supervisor, name: PersistentShiftHandoff.TaskSupervisor},
+      {PersistentShiftHandoff.MaintenanceQueue, max_queue: 2},
+      {PersistentShiftHandoff.Commander, []}
     ]
 
-    # See https://hexdocs.pm/elixir/Supervisor.html
-    # for other strategies and supported options
     opts = [strategy: :one_for_one, name: PersistentShiftHandoff.Supervisor]
     Supervisor.start_link(children, opts)
   end

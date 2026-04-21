@@ -1,6 +1,4 @@
 defmodule BroadwayAnomalyResponse.Application do
-  # See https://hexdocs.pm/elixir/Application.html
-  # for more information on OTP Applications
   @moduledoc false
 
   use Application
@@ -8,12 +6,16 @@ defmodule BroadwayAnomalyResponse.Application do
   @impl true
   def start(_type, _args) do
     children = [
-      # Starts a worker by calling: BroadwayAnomalyResponse.Worker.start_link(arg)
-      # {BroadwayAnomalyResponse.Worker, arg}
+      {Registry, keys: :unique, name: BroadwayAnomalyResponse.Registry},
+      {Registry, keys: :duplicate, name: BroadwayAnomalyResponse.AlertRegistry},
+      {BroadwayAnomalyResponse.HabitatFleet, []},
+      {BroadwayAnomalyResponse.OperationsSupervisor, []},
+      {BroadwayAnomalyResponse.CommunicationsSupervisor, []},
+      {BroadwayAnomalyResponse.RoverSupervisor, []},
+      {Task.Supervisor, name: BroadwayAnomalyResponse.TaskSupervisor},
+      {BroadwayAnomalyResponse.MaintenanceQueue, max_queue: 2}
     ]
 
-    # See https://hexdocs.pm/elixir/Supervisor.html
-    # for other strategies and supported options
     opts = [strategy: :one_for_one, name: BroadwayAnomalyResponse.Supervisor]
     Supervisor.start_link(children, opts)
   end

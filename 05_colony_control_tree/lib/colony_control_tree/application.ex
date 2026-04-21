@@ -7,6 +7,7 @@ defmodule ColonyControlTree.Application do
   def start(_type, _args) do
     children = [
       {Registry, keys: :unique, name: ColonyControlTree.Registry},
+      {ColonyControlTree.HabitatFleet, []},
       {ColonyControlTree.OperationsSupervisor, []},
       {ColonyControlTree.CommunicationsSupervisor, []}
     ]

@@ -6,7 +6,13 @@ defmodule PubsubAlerts.Application do
   @impl true
   def start(_type, _args) do
     children = [
-      {Registry, keys: :duplicate, name: PubsubAlerts.Registry}
+      {Registry, keys: :unique, name: PubsubAlerts.Registry},
+      {Registry, keys: :duplicate, name: PubsubAlerts.AlertRegistry},
+      {PubsubAlerts.HabitatFleet, []},
+      {PubsubAlerts.OperationsSupervisor, []},
+      {PubsubAlerts.CommunicationsSupervisor, []},
+      {PubsubAlerts.RoverSupervisor, []},
+      {Task.Supervisor, name: PubsubAlerts.TaskSupervisor}
     ]
 
     opts = [strategy: :one_for_one, name: PubsubAlerts.Supervisor]

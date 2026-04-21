@@ -2,71 +2,132 @@
 
 `mars_colony_otp` teaches OTP by following the slow hardening of a Mars colony.
 
-The series begins with one habitat's resource ledger and gradually adds long-lived
-processes, naming, supervision, dynamic workers, alerting, telemetry, streaming,
-and recovery. Each lesson is its own standalone Mix project, but together they
-follow the same colony as it becomes operationally credible.
+The series begins with one habitat that barely knows how to keep a clean ledger.
+It ends with a supervised colony that can launch rovers, fan out alerts, absorb
+load, process telemetry, coordinate incidents, and carry selected operational
+memory across restarts.
 
-The point is not to throw OTP concepts at the reader in isolation. The point is
-to let the colony grow in believable steps so each chapter earns the abstraction
-it introduces.
+Each chapter is its own standalone Mix project, but the story is cumulative.
+Later lessons do not throw earlier ones away. They inherit the colony that came
+before and extend it.
+
+That matters because OTP is easiest to learn when the abstractions arrive under
+pressure:
+
+- a pure module becomes a `GenServer` when state needs to live
+- a single service gets a `Registry` when one instance becomes many
+- a worker gets a supervisor when failure must stay local
+- a queue appears when work starts piling up
+- a pipeline appears when events stop looking like isolated messages
+
+This repo is trying to teach that pressure, not just the APIs.
 
 ## The Journey
 
+Each lesson teaches one new OTP step while keeping the colony already built:
+
 1. [`01_habitat_bootstrap`](./01_habitat_bootstrap/README.md)
-   Pure state transitions for one habitat's oxygen, water, power, and maintenance plan.
+   One habitat learns to track oxygen, water, power, crew, and maintenance through pure state transitions.
 2. [`02_habitat_server`](./02_habitat_server/README.md)
-   A single habitat becomes a live `GenServer`.
+   That same habitat goes live as a `GenServer`.
 3. [`03_named_habitats`](./03_named_habitats/README.md)
-   Multiple habitats are addressed by ID through a `Registry`.
+   The colony grows beyond one habitat and learns runtime identity with `Registry`.
 4. [`04_life_support_supervision`](./04_life_support_supervision/README.md)
-   Atmosphere, water, and thermal services run under a habitat supervision tree.
+   Each habitat becomes a small supervision tree with restartable subsystems.
 5. [`05_colony_control_tree`](./05_colony_control_tree/README.md)
-   The colony is organized into top-level supervised branches.
+   The colony adds top-level branches for operations, communications, and habitat fleet ownership.
 6. [`06_dynamic_rovers`](./06_dynamic_rovers/README.md)
-   Rovers are launched on demand through a `DynamicSupervisor`.
+   Surface work becomes dynamic, so rovers are created and retired at runtime.
 7. [`07_tasks_and_timeouts`](./07_tasks_and_timeouts/README.md)
-   Burst work such as route planning runs under `Task.Supervisor`.
+   Not every unit of work deserves a permanent process, so route planning moves into supervised tasks.
 8. [`08_pubsub_alerts`](./08_pubsub_alerts/README.md)
-   Alerts fan out to decoupled subscribers through a local event bus.
+   Alerts start spreading across the runtime without direct process-to-process coupling.
 9. [`09_backpressure_and_queues`](./09_backpressure_and_queues/README.md)
-   Maintenance requests are buffered and drained with explicit queue ownership.
+   Maintenance intake gets explicit queue ownership and overload signaling.
 10. [`10_telemetry_and_observability`](./10_telemetry_and_observability/README.md)
-    The runtime starts emitting measurements the operators can reason about.
+    Queue behavior becomes observable with `:telemetry`.
 11. [`11_genstage_resource_pipeline`](./11_genstage_resource_pipeline/README.md)
-    Habitat and rover sensors flow through a demand-driven `GenStage` pipeline.
+    Sensor packets turn into a demand-driven stream with `GenStage`.
 12. [`12_broadway_anomaly_response`](./12_broadway_anomaly_response/README.md)
-    Telemetry handling graduates to a Broadway pipeline for batched anomaly work.
+    The anomaly path matures into a Broadway pipeline.
 13. [`13_incident_commander`](./13_incident_commander/README.md)
-    A coordinator process turns alerts into multi-system response actions.
+    Alerts become coordinated response instead of isolated messages.
 14. [`14_persistent_shift_handoff`](./14_persistent_shift_handoff/README.md)
-    Selected operational state survives restarts so the next shift inherits context.
+    The final colony learns how to persist selected operational memory across restarts.
 
 ## Final Colony Shape
 
-By the end of the series, the runtime looks roughly like this:
+By the end of the tutorial, the runtime looks roughly like this:
 
 ```text
-ColonySupervisor
-|- MissionControlSupervisor
-|  |- IncidentCommander
-|  `- AlertBus
-|- HabitatFleetSupervisor
+PersistentShiftHandoff.Application
+|- Registry
+|- AlertRegistry
+|- HabitatFleet
 |  `- HabitatSupervisor (per habitat)
-|     |- AtmosphereControl
-|     |- WaterRecycler
-|     `- ThermalControl
+|     |- LifeSupportUnit (:atmosphere)
+|     |- LifeSupportUnit (:water)
+|     `- LifeSupportUnit (:thermal)
+|- OperationsSupervisor
+|  |- DomainService (:mission_control)
+|  `- DomainService (:storage)
+|- CommunicationsSupervisor
+|  `- DomainService (:comms_relay)
 |- RoverSupervisor
-|  `- RoverServer (per rover)
+|  `- Rover (per mission)
+|- TaskSupervisor
 |- MaintenanceQueue
-`- TelemetryPipelines
-   |- GenStage sensor flow
-   `- Broadway anomaly flow
+|- Commander
+|- SensorProducer / Normalizer / AnomalySink
+|- Broadway Pipeline
+`- HandoffLog
 ```
+
+That tree is intentionally small. It is enough to show the OTP ideas without
+turning the tutorial into infrastructure sprawl.
+
+## What You Will Learn Across The Series
+
+The full arc covers the core OTP ladder most readers actually need:
+
+- pure state transitions before processes
+- `GenServer`
+- `Registry`
+- `Supervisor`
+- `DynamicSupervisor`
+- `Task.Supervisor`
+- local pubsub patterns
+- queue ownership and backpressure
+- `:telemetry`
+- `GenStage`
+- Broadway
+- orchestration with explicit runtime state
+- selective persistence
+
+## Using The Lessons
+
+Each chapter owns its own code, tests, and dependencies.
+
+Run a chapter from inside its directory:
+
+```bash
+cd 06_dynamic_rovers
+mix test
+```
+
+If you want to inspect a chapter live:
+
+```bash
+cd 06_dynamic_rovers
+iex -S mix
+```
+
+Every lesson includes `:observer` in `extra_applications`, so `:observer.start()`
+is available while you explore the running system.
 
 ## Start Here
 
 Begin with [`01_habitat_bootstrap`](./01_habitat_bootstrap/README.md).
 
-Before the colony gets processes, it first needs state transitions that are easy
-to read, test, and trust.
+Before the colony gets a PID, a supervisor, or a streaming pipeline, it first
+needs state transitions that are explicit enough to trust.

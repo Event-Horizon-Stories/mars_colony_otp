@@ -1,6 +1,4 @@
 defmodule GenstageResourcePipeline.Application do
-  # See https://hexdocs.pm/elixir/Application.html
-  # for more information on OTP Applications
   @moduledoc false
 
   use Application
@@ -8,12 +6,16 @@ defmodule GenstageResourcePipeline.Application do
   @impl true
   def start(_type, _args) do
     children = [
-      # Starts a worker by calling: GenstageResourcePipeline.Worker.start_link(arg)
-      # {GenstageResourcePipeline.Worker, arg}
+      {Registry, keys: :unique, name: GenstageResourcePipeline.Registry},
+      {Registry, keys: :duplicate, name: GenstageResourcePipeline.AlertRegistry},
+      {GenstageResourcePipeline.HabitatFleet, []},
+      {GenstageResourcePipeline.OperationsSupervisor, []},
+      {GenstageResourcePipeline.CommunicationsSupervisor, []},
+      {GenstageResourcePipeline.RoverSupervisor, []},
+      {Task.Supervisor, name: GenstageResourcePipeline.TaskSupervisor},
+      {GenstageResourcePipeline.MaintenanceQueue, max_queue: 2}
     ]
 
-    # See https://hexdocs.pm/elixir/Supervisor.html
-    # for other strategies and supported options
     opts = [strategy: :one_for_one, name: GenstageResourcePipeline.Supervisor]
     Supervisor.start_link(children, opts)
   end

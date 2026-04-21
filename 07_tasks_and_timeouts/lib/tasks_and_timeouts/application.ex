@@ -6,6 +6,11 @@ defmodule TasksAndTimeouts.Application do
   @impl true
   def start(_type, _args) do
     children = [
+      {Registry, keys: :unique, name: TasksAndTimeouts.Registry},
+      {TasksAndTimeouts.HabitatFleet, []},
+      {TasksAndTimeouts.OperationsSupervisor, []},
+      {TasksAndTimeouts.CommunicationsSupervisor, []},
+      {TasksAndTimeouts.RoverSupervisor, []},
       {Task.Supervisor, name: TasksAndTimeouts.TaskSupervisor}
     ]
 

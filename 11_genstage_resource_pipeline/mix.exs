@@ -22,7 +22,8 @@ defmodule GenstageResourcePipeline.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:gen_stage, "~> 1.2"}
+      {:gen_stage, "~> 1.2"},
+      {:telemetry, "~> 1.3"}
     ]
   end
 end

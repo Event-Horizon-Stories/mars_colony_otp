@@ -2,7 +2,6 @@ defmodule BroadwayAnomalyResponse.Pipeline do
   @moduledoc """
   The Broadway pipeline for anomaly processing.
 
-  Beginner note:
   Broadway gives a higher-level shape to the same streaming problem introduced
   with `GenStage`: where events come from, how many processors exist, and which
   events should be batched together.

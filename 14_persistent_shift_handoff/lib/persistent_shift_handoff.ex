@@ -115,6 +115,8 @@ defmodule PersistentShiftHandoff do
   def snapshot(server), do: HandoffLog.snapshot(server)
 
   defp producer_stage_name(pipeline_name) do
+    # The tutorial keeps producer concurrency at 1, which makes this generated
+    # Broadway producer name stable enough to use in a focused example.
     Module.concat([pipeline_name, "Broadway", "Producer_0"])
   end
 end

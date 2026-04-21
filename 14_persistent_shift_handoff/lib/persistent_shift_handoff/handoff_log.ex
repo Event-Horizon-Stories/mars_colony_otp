@@ -2,7 +2,6 @@ defmodule PersistentShiftHandoff.HandoffLog do
   @moduledoc """
   Stores shift summaries that should survive a restart.
 
-  Beginner note:
   this is intentionally narrow persistence. The tutorial is not trying to
   persist the whole colony. It only persists the handoff summaries that are
   useful to the next shift.
@@ -37,14 +36,13 @@ defmodule PersistentShiftHandoff.HandoffLog do
   def handle_call(:snapshot, _from, state), do: {:reply, state, state}
 
   defp load_state(path) do
-    case File.read(path) do
-      {:ok, binary} ->
-        # Put the file path back into the loaded state because we do not store it on disk.
-        Map.put(:erlang.binary_to_term(binary), :path, path)
-
-      {:error, :enoent} ->
-        # First boot: start with an empty handoff history.
-        %{path: path, summaries: []}
+    with {:ok, binary} <- File.read(path),
+         {:ok, persisted_state} <- decode_state(binary) do
+      # Put the file path back into the loaded state because we do not store it on disk.
+      Map.put(persisted_state, :path, path)
+    else
+      # First boot or an unreadable file: start with an empty handoff history.
+      {:error, _reason} -> empty_state(path)
     end
   end
 
@@ -53,4 +51,14 @@ defmodule PersistentShiftHandoff.HandoffLog do
     persisted = Map.delete(state, :path)
     File.write!(state.path, :erlang.term_to_binary(persisted))
   end
+
+  defp decode_state(binary) do
+    try do
+      {:ok, :erlang.binary_to_term(binary, [:safe])}
+    rescue
+      ArgumentError -> {:error, :invalid_term}
+    end
+  end
+
+  defp empty_state(path), do: %{path: path, summaries: []}
 end

@@ -2,7 +2,6 @@ defmodule IncidentCommander.AlertBus do
   @moduledoc """
   A tiny pubsub-style surface for incident alerts.
 
-  Beginner note:
   this module stays small on purpose. The lesson is not in the bus itself. The
   lesson is that the commander can subscribe to one topic and react to alerts
   without every alert publisher knowing about the commander directly.

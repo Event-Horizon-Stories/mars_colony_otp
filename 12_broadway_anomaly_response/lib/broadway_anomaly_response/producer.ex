@@ -2,7 +2,6 @@ defmodule BroadwayAnomalyResponse.Producer do
   @moduledoc """
   The GenStage producer that feeds the Broadway pipeline.
 
-  Beginner note:
   Broadway still needs a producer underneath. This module looks a lot like the
   GenStage producer from the previous chapter because Broadway builds on the same
   demand-driven idea.

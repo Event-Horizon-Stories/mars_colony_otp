@@ -109,6 +109,8 @@ defmodule IncidentCommander do
   end
 
   defp producer_stage_name(pipeline_name) do
+    # This chapter still uses one producer, so the first Broadway producer has
+    # a stable generated name that the tutorial can address directly.
     Module.concat([pipeline_name, "Broadway", "Producer_0"])
   end
 end

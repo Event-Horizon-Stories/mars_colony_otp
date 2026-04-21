@@ -2,7 +2,6 @@ defmodule TelemetryAndObservability.MaintenanceQueue do
   @moduledoc """
   A maintenance queue that emits telemetry as it changes.
 
-  Beginner note:
   the queue logic is almost the same as lesson 9. The new lesson is that useful
   runtime boundaries should also emit measurements and metadata for observers.
   """

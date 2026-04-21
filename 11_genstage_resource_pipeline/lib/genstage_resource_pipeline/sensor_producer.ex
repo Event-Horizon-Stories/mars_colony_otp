@@ -2,7 +2,6 @@ defmodule GenstageResourcePipeline.SensorProducer do
   @moduledoc """
   The producer stage for raw sensor packets.
 
-  Beginner note:
   `GenStage` producers do not push endlessly on their own. They keep track of
   how much downstream demand exists and only release that much work.
   """

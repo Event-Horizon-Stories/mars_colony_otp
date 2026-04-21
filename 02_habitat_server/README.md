@@ -47,6 +47,7 @@ The habitat can now:
 - start as a named process
 - answer synchronous status queries
 - handle resource changes
+- update crew count
 - accept asynchronous maintenance scheduling
 
 ## The Code
@@ -77,6 +78,9 @@ defmodule HabitatServer do
   # Synchronous write: the caller wants the updated resource state immediately.
   defdelegate consume_resource(server, resource, amount), to: Habitat
 
+  # Synchronous write: staffing still matters in the live habitat.
+  defdelegate set_crew_count(server, crew_count), to: Habitat
+
   # Asynchronous write: maintenance can be scheduled without blocking the caller.
   defdelegate schedule_maintenance(server, system), to: Habitat
 end
@@ -96,8 +100,20 @@ def handle_call({:consume_resource, resource, amount}, _from, state)
     |> Map.put(resource, updated)
     # Keep the same operator-facing audit trail from lesson 1.
     |> append_status("#{resource} adjusted to #{updated}")
+    # Keep the same low-resource warning behavior from lesson 1.
+    |> maybe_add_low_resource_status(resource, updated)
 
   # Reply with the new state and keep it as the server state.
+  {:reply, next_state, next_state}
+end
+
+def handle_call({:set_crew_count, crew_count}, _from, state)
+    when is_integer(crew_count) and crew_count > 0 do
+  next_state =
+    state
+    |> Map.put(:crew_count, crew_count)
+    |> append_status("crew count set to #{crew_count}")
+
   {:reply, next_state, next_state}
 end
 
@@ -137,12 +153,14 @@ Then:
   HabitatServer.start_link(
     name: :habitat_a,
     habitat_name: "hab-a",
+    crew_count: 4,
     oxygen: 100,
     water: 100,
     power: 100
   )
 
-HabitatServer.consume_resource(:habitat_a, :oxygen, 15)
+HabitatServer.consume_resource(:habitat_a, :oxygen, 80)
+HabitatServer.set_crew_count(:habitat_a, 6)
 HabitatServer.schedule_maintenance(:habitat_a, "water recycler")
 HabitatServer.get_status(:habitat_a)
 ```
@@ -153,10 +171,11 @@ You should see a live habitat whose state survives between calls.
 
 The test suite in
 [`test/habitat_server_live_test.exs`](./test/habitat_server_live_test.exs)
-proves three things:
+proves four things:
 
 - synchronous calls can read and mutate habitat state
 - asynchronous casts can add maintenance work without blocking the caller
+- the live habitat still records crew changes and low-resource warnings
 - the habitat behaves like the same operational model from lesson 1, only now as
   a running process
 

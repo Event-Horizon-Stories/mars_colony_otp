@@ -125,7 +125,7 @@ NamedHabitats.start_habitat("lab-1", oxygen: 80)
 {:ok, hab_a} = NamedHabitats.get_status("hab-a")
 {:ok, lab_1} = NamedHabitats.get_status("lab-1")
 
-{hab_a.name, lab_1.name}
+{hab_a.id, lab_1.id}
 ```
 
 You should see separate running habitats that can be found by ID instead of by

@@ -21,6 +21,9 @@ defmodule HabitatServer.Habitat do
   def consume_resource(server, resource, amount),
     do: GenServer.call(server, {:consume_resource, resource, amount})
 
+  def set_crew_count(server, crew_count),
+    do: GenServer.call(server, {:set_crew_count, crew_count})
+
   # `cast/2` is asynchronous, which fits "schedule this work and move on."
   def schedule_maintenance(server, system),
     do: GenServer.cast(server, {:schedule_maintenance, system})
@@ -30,6 +33,7 @@ defmodule HabitatServer.Habitat do
     {:ok,
      %{
        name: Keyword.fetch!(opts, :habitat_name),
+       crew_count: Keyword.get(opts, :crew_count, 4),
        oxygen: Keyword.get(opts, :oxygen, 100),
        water: Keyword.get(opts, :water, 100),
        power: Keyword.get(opts, :power, 100),
@@ -48,9 +52,22 @@ defmodule HabitatServer.Habitat do
     updated = max(Map.fetch!(state, resource) - amount, 0)
 
     next_state =
-      state |> Map.put(resource, updated) |> append_status("#{resource} adjusted to #{updated}")
+      state
+      |> Map.put(resource, updated)
+      |> append_status("#{resource} adjusted to #{updated}")
+      |> maybe_add_low_resource_status(resource, updated)
 
     # The reply and the next server state are both `next_state`.
+    {:reply, next_state, next_state}
+  end
+
+  def handle_call({:set_crew_count, crew_count}, _from, state)
+      when is_integer(crew_count) and crew_count > 0 do
+    next_state =
+      state
+      |> Map.put(:crew_count, crew_count)
+      |> append_status("crew count set to #{crew_count}")
+
     {:reply, next_state, next_state}
   end
 
@@ -68,4 +85,10 @@ defmodule HabitatServer.Habitat do
   defp append_status(state, entry) do
     Map.update!(state, :status_log, &(&1 ++ [entry]))
   end
+
+  defp maybe_add_low_resource_status(state, resource, value) when value <= 25 do
+    append_status(state, "#{resource} is now below the safety threshold")
+  end
+
+  defp maybe_add_low_resource_status(state, _resource, _value), do: state
 end

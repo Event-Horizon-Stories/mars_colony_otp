@@ -2,7 +2,6 @@ defmodule GenstageResourcePipeline.AnomalySink do
   @moduledoc """
   The final consumer in the GenStage pipeline.
 
-  Beginner note:
   this sink does not produce more events. Its job is to inspect normalized data
   and notify the outside world when something crosses the anomaly threshold.
   """

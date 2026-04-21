@@ -113,6 +113,9 @@ defmodule BroadwayAnomalyResponse do
   end
 
   defp producer_stage_name(pipeline_name) do
+    # This chapter uses one producer, so Broadway generates one predictable
+    # producer stage name. The shortcut keeps the lesson small, but it is tied
+    # to that single-producer setup.
     Module.concat([pipeline_name, "Broadway", "Producer_0"])
   end
 end

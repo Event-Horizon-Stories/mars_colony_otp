@@ -2,7 +2,6 @@ defmodule BroadwayAnomalyResponse.Transformer do
   @moduledoc """
   Wraps raw events in `Broadway.Message`.
 
-  Beginner note:
   Broadway processors work with `Broadway.Message`, not plain maps. The
   transformer is the step that adapts the producer's raw event into Broadway's
   message shape.

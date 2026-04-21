@@ -22,7 +22,8 @@ By the end of this lesson, you should understand:
 
 - how to add a narrow persistence boundary to an OTP system
 - why selective persistence is often better than trying to persist everything
-- how the final chapter can aggregate the full colony built across the series
+- how the single-node colony can reach a natural stopping point before
+  distribution enters the story
 
 ## The Story
 
@@ -53,11 +54,11 @@ needs to survive. Keep the rest in normal runtime state.
 
 ## What This Chapter Adds
 
-This final lesson keeps the full colony from lesson 13 and adds:
+This lesson keeps the full colony from lesson 13 and adds:
 
 - `PersistentShiftHandoff.HandoffLog`
 - public APIs to start the log, record summaries, and read them back
-- a final aggregate chapter where the whole series is present at once
+- the single-node culmination of the series before distribution enters the story
 
 ## The Code
 
@@ -111,7 +112,7 @@ def record_summary(server, summary), do: HandoffLog.record_summary(server, summa
 def snapshot(server), do: HandoffLog.snapshot(server)
 ```
 
-That is the final lesson’s design argument. The colony keeps the full runtime it
+That is the chapter’s design argument. The colony keeps the full runtime it
 built across the series, then adds one careful durable edge where it genuinely
 helps.
 
@@ -164,14 +165,12 @@ runtime built across the tutorial.
 
 ## Why This Matters
 
-This is where the series ends:
+The colony can now preserve selected operational memory instead of losing every
+useful summary at shutdown.
 
-- not with a giant abstraction leap
-- not with a distributed cluster
-- not with every state surface persisted forever
-
-It ends with a colony that has learned enough OTP to feel alive, observable, and
-recoverable in believable ways.
+That solves one kind of durability problem. It does not solve geography. As soon
+as a remote outpost begins running its own runtime, mission control still needs
+to reach across a node boundary to inspect and coordinate it.
 
 ## OTP Takeaway
 
@@ -182,7 +181,7 @@ ordinary runtime state until the system has earned more complexity.
 
 ## What the Colony Can Do Now
 
-The final colony can now:
+The colony can now:
 
 - run the habitat and operations tree from the early chapters
 - create temporary rovers and supervised tasks
@@ -192,16 +191,18 @@ The final colony can now:
 - coordinate incidents through an explicit commander
 - preserve selected handoff summaries across restart
 
-That is the aggregate system this tutorial was building the whole time.
+That is the aggregate single-node system this tutorial was building up to.
 
-## Where To Go Next
+## What Still Hurts
 
-From here, the natural extensions are:
+The colony can preserve selected memory, but it is still a single-node world.
 
-- distributed process discovery
-- richer incident state machines
-- heavier-duty durable storage
-- release and boot-time recovery workflows
+As soon as a remote outpost begins running its own copy of the colony, mission
+control needs a way to connect to that node, query its state, and discover one
+remote service cleanly.
 
-But the core OTP journey is already complete. The colony is no longer a demo. It
-is a small, coherent system.
+## Next Lesson
+
+[`15_distributed_outposts`](../15_distributed_outposts/README.md) adds a remote
+outpost node and teaches the first practical distributed Elixir tools:
+`Node.connect/1`, `:rpc`, and one globally named beacon.

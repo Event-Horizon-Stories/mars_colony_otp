@@ -54,12 +54,17 @@ defmodule DynamicRovers do
     with {:ok, pid} <- lookup_rover(id) do
       monitor = Process.monitor(pid)
       :ok = DynamicSupervisor.terminate_child(DynamicRovers.RoverSupervisor, pid)
+      result = await_rover_shutdown(monitor, pid, id)
+      Process.demonitor(monitor, [:flush])
+      result
+    end
+  end
 
-      receive do
-        {:DOWN, ^monitor, :process, ^pid, _reason} -> await_rover_removal(id)
-      after
-        100 -> await_rover_removal(id)
-      end
+  defp await_rover_shutdown(monitor, pid, id) do
+    receive do
+      {:DOWN, ^monitor, :process, ^pid, _reason} -> await_rover_removal(id)
+    after
+      100 -> await_rover_removal(id)
     end
   end
 

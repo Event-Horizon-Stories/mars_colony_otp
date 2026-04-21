@@ -46,8 +46,9 @@ This chapter adds:
 - [`lib/life_support_supervision/life_support_unit.ex`](./lib/life_support_supervision/life_support_unit.ex)
 - [`lib/life_support_supervision/habitat_fleet.ex`](./lib/life_support_supervision/habitat_fleet.ex)
 
-The colony keeps the registry-driven fleet from lesson 3, but now each habitat
-starts a small internal tree.
+The colony keeps the fleet shape from lesson 3, but the teaching focus shifts
+from one habitat status server to the supervised subsystem tree inside each
+habitat.
 
 ## The Code
 

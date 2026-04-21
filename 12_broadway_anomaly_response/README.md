@@ -45,7 +45,9 @@ and the earlier sensor path from lesson 11, then adds:
 - `BroadwayAnomalyResponse.Pipeline`
 - `BroadwayAnomalyResponse.Producer`
 - `BroadwayAnomalyResponse.Transformer`
-- public APIs to start the Broadway pipeline and push events into it
+- `start_sensor_pipeline/1` as the carried-forward GenStage sensor path
+- `start_pipeline/1` as the new Broadway anomaly path entrypoint
+- public APIs to push events into both flows
 
 ## The Code
 
@@ -82,6 +84,11 @@ end
 
 That says, in one place, how events enter, how they are processed, and how
 critical ones are batched.
+
+One continuity detail is easy to miss: lesson 11 used `start_pipeline/1` for
+the hand-built GenStage path. In this lesson that earlier path is still present,
+but it now lives behind `start_sensor_pipeline/1` so `start_pipeline/1` can name
+the new Broadway runtime directly.
 
 The message handler decides which events should be batched:
 
@@ -171,6 +178,7 @@ machinery” to “run a recognizable processing topology.”
 The colony can now:
 
 - keep the broader runtime built in earlier lessons
+- keep the lesson 11 sensor path under `start_sensor_pipeline/1`
 - run a production-shaped anomaly pipeline
 - classify events and route critical ones into a batcher
 - emit grouped critical responses instead of isolated event noise

@@ -2,14 +2,17 @@
 
 `mars_colony_otp` teaches OTP by following the slow hardening of a Mars colony.
 
-The series begins with one habitat that barely knows how to keep a clean ledger.
+The series begins with one raw habitat process loop and one habitat that barely
+knows how to keep a clean ledger.
 It ends with a supervised colony that can launch rovers, fan out alerts, absorb
-load, process telemetry, coordinate incidents, and carry selected operational
-memory across restarts.
+load, process telemetry, coordinate incidents, carry selected operational
+memory across restarts, and reach a remote outpost node.
 
-Each chapter is its own standalone Mix project, but the story is cumulative.
-Later lessons do not throw earlier ones away. They inherit the colony that came
-before and extend it.
+Each chapter is its own standalone Mix project.
+
+Lesson `00` is a prelude that shows the raw mailbox loop underneath OTP. From
+lesson `01` onward, the story becomes cumulative. Later lessons do not throw
+earlier ones away. They inherit the colony that came before and extend it.
 
 That matters because OTP is easiest to learn when the abstractions arrive under
 pressure:
@@ -24,8 +27,11 @@ This repo is trying to teach that pressure, not just the APIs.
 
 ## The Journey
 
-Each lesson teaches one new OTP step while keeping the colony already built:
+Lesson `00` is the manual-process prelude. Lessons `01` through `15` then grow
+the colony cumulatively:
 
+0. [`00_process_loop`](./00_process_loop/README.md)
+   One habitat is implemented as a raw mailbox loop so the reader can see the manual process model beneath OTP.
 1. [`01_habitat_bootstrap`](./01_habitat_bootstrap/README.md)
    One habitat learns to track oxygen, water, power, crew, and maintenance through pure state transitions.
 2. [`02_habitat_server`](./02_habitat_server/README.md)
@@ -53,43 +59,67 @@ Each lesson teaches one new OTP step while keeping the colony already built:
 13. [`13_incident_commander`](./13_incident_commander/README.md)
     Alerts become coordinated response instead of isolated messages.
 14. [`14_persistent_shift_handoff`](./14_persistent_shift_handoff/README.md)
-    The final colony learns how to persist selected operational memory across restarts.
+    The colony learns how to persist selected operational memory across restarts.
+15. [`15_distributed_outposts`](./15_distributed_outposts/README.md)
+    Mission control reaches a remote outpost node and learns the first practical distributed Elixir tools.
 
 ## Final Colony Shape
 
 By the end of the tutorial, the runtime looks roughly like this:
 
 ```text
-PersistentShiftHandoff.Application
-|- Registry
-|- AlertRegistry
-|- HabitatFleet
-|  `- HabitatSupervisor (per habitat)
-|     |- LifeSupportUnit (:atmosphere)
-|     |- LifeSupportUnit (:water)
-|     `- LifeSupportUnit (:thermal)
-|- OperationsSupervisor
-|  |- DomainService (:mission_control)
-|  `- DomainService (:storage)
-|- CommunicationsSupervisor
-|  `- DomainService (:comms_relay)
-|- RoverSupervisor
-|  `- Rover (per mission)
-|- TaskSupervisor
-|- MaintenanceQueue
-|- Commander
-|- SensorProducer / Normalizer / AnomalySink
-|- Broadway Pipeline
-`- HandoffLog
+MissionControlNode
+`- DistributedOutposts.Application
+   |- Registry
+   |- AlertRegistry
+   |- HabitatFleet
+   |  `- HabitatSupervisor (per habitat)
+   |     |- LifeSupportUnit (:atmosphere)
+   |     |- LifeSupportUnit (:water)
+   |     `- LifeSupportUnit (:thermal)
+   |- OperationsSupervisor
+   |  |- DomainService (:mission_control)
+   |  `- DomainService (:storage)
+   |- CommunicationsSupervisor
+   |  `- DomainService (:comms_relay)
+   |- RoverSupervisor
+   |  `- Rover (per mission)
+   |- TaskSupervisor
+   |- MaintenanceQueue
+   |- Commander
+   `- OutpostBeacon
+
+RemoteOutpostNode
+`- DistributedOutposts.Application
+   |- Registry
+   |- AlertRegistry
+   |- HabitatFleet
+   |- OperationsSupervisor
+   |- CommunicationsSupervisor
+   |- RoverSupervisor
+   |- TaskSupervisor
+   |- MaintenanceQueue
+   |- Commander
+   `- OutpostBeacon
 ```
 
 That tree is intentionally small. It is enough to show the OTP ideas without
 turning the tutorial into infrastructure sprawl.
 
+In lesson 15, mission control mainly queries the remote habitat, queue,
+commander, and beacon even though the remote node boots the same broader
+application tree.
+
+Some lesson-specific processes are started on demand rather than at boot. In the
+later chapters, the handoff log needs a path before it can start, and the
+sensor/Broadway pipelines are brought up explicitly by the public APIs when the
+reader wants to explore those data paths.
+
 ## What You Will Learn Across The Series
 
 The full arc covers the core OTP ladder most readers actually need:
 
+- raw `spawn_link` / `send` / `receive` loops before `GenServer`
 - pure state transitions before processes
 - `GenServer`
 - `Registry`
@@ -103,6 +133,7 @@ The full arc covers the core OTP ladder most readers actually need:
 - Broadway
 - orchestration with explicit runtime state
 - selective persistence
+- first distributed Elixir patterns with `Node`, `:rpc`, and `:global`
 
 ## Using The Lessons
 
@@ -127,7 +158,7 @@ is available while you explore the running system.
 
 ## Start Here
 
-Begin with [`01_habitat_bootstrap`](./01_habitat_bootstrap/README.md).
+Begin with [`00_process_loop`](./00_process_loop/README.md).
 
-Before the colony gets a PID, a supervisor, or a streaming pipeline, it first
-needs state transitions that are explicit enough to trust.
+Before the colony gets a supervisor, a registry, or a streaming pipeline, it
+helps to see the raw shape of one mailbox-driven process.

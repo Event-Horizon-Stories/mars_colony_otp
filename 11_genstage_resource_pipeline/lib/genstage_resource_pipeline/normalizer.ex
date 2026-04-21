@@ -2,7 +2,6 @@ defmodule GenstageResourcePipeline.Normalizer do
   @moduledoc """
   A producer-consumer stage that reshapes packets before anomaly detection.
 
-  Beginner note:
   this stage both consumes and produces events. That is why its role is
   `:producer_consumer` instead of just `:consumer`.
   """

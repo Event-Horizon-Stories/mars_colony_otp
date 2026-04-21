@@ -1,5 +1,11 @@
 defmodule TelemetryAndObservability.MaintenanceQueue do
-  @moduledoc false
+  @moduledoc """
+  A maintenance queue that emits telemetry as it changes.
+
+  Beginner note:
+  the queue logic is almost the same as lesson 9. The new lesson is that useful
+  runtime boundaries should also emit measurements and metadata for observers.
+  """
 
   use GenServer
 
@@ -28,6 +34,7 @@ defmodule TelemetryAndObservability.MaintenanceQueue do
     next_state = %{state | queue: next_queue}
     overloaded = :queue.len(next_queue) > state.max_queue
 
+    # Measurements describe "how much", while metadata describes "which request".
     :telemetry.execute(
       [:mars_colony, :maintenance_queue, :enqueue],
       %{queue_depth: :queue.len(next_queue)},
@@ -46,6 +53,7 @@ defmodule TelemetryAndObservability.MaintenanceQueue do
             inflight: Map.put(state.inflight, request.id, request)
         }
 
+        # Emit a second event when work leaves the queue and starts running.
         :telemetry.execute(
           [:mars_colony, :maintenance_queue, :dispatch],
           %{queue_depth: :queue.len(rest)},

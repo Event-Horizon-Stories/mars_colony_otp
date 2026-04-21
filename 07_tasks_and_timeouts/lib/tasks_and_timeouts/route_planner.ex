@@ -1,8 +1,14 @@
 defmodule TasksAndTimeouts.RoutePlanner do
-  @moduledoc false
+  @moduledoc """
+  Runs route planning as short-lived async work.
+
+  This module exists to contrast tasks with long-lived servers. The colony wants
+  the route result, not a route-planning process that lives forever.
+  """
 
   def plan_route_async(route_request) do
     Task.Supervisor.async_nolink(TasksAndTimeouts.TaskSupervisor, fn ->
+      # Sleeping here simulates slow work so the lesson can demonstrate timeouts.
       maybe_sleep(Map.get(route_request, :latency_ms, 0))
 
       %{
@@ -15,6 +21,7 @@ defmodule TasksAndTimeouts.RoutePlanner do
   end
 
   def await_plan(task, timeout) do
+    # The caller chooses how patient it wants to be.
     Task.await(task, timeout)
   end
 

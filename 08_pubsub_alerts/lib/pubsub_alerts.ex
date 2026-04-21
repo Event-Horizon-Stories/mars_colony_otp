@@ -1,6 +1,10 @@
 defmodule PubsubAlerts do
   @moduledoc """
   Public API for the pubsub alerts lesson.
+
+  This module is worth reading because it shows the cumulative shape of the
+  tutorial. Earlier habitat, rover, and task APIs stay available while the new
+  alert fan-out surface is added on top.
   """
 
   alias PubsubAlerts.{HabitatFleet, LifeSupportUnit, RoutePlanner, Rover, RoverSupervisor}
@@ -58,12 +62,15 @@ defmodule PubsubAlerts do
   def await_plan(task, timeout), do: RoutePlanner.await_plan(task, timeout)
 
   def subscribe(topic) when is_atom(topic) do
+    # `Registry` in duplicate mode lets many listeners subscribe to the same topic.
     Registry.register(PubsubAlerts.AlertRegistry, topic, [])
   end
 
   def publish(topic, payload) when is_atom(topic) do
     Registry.dispatch(PubsubAlerts.AlertRegistry, topic, fn entries ->
       for {pid, _meta} <- entries do
+        # Send the same alert to every subscriber without the publisher
+        # knowing who those subscribers are ahead of time.
         send(pid, {:colony_alert, topic, payload})
       end
     end)

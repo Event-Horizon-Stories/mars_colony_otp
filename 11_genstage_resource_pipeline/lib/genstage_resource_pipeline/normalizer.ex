@@ -1,5 +1,11 @@
 defmodule GenstageResourcePipeline.Normalizer do
-  @moduledoc false
+  @moduledoc """
+  A producer-consumer stage that reshapes packets before anomaly detection.
+
+  Beginner note:
+  this stage both consumes and produces events. That is why its role is
+  `:producer_consumer` instead of just `:consumer`.
+  """
 
   use GenStage
 
@@ -19,6 +25,7 @@ defmodule GenstageResourcePipeline.Normalizer do
       Enum.map(events, fn event ->
         cond do
           Map.has_key?(event, :temperature_f) ->
+            # Convert to a shared unit so downstream stages do not each repeat the same logic.
             Map.put(event, :temperature_c, Float.round((event.temperature_f - 32) * 5 / 9, 1))
 
           true ->

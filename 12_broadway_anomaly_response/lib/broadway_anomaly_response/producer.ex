@@ -1,5 +1,12 @@
 defmodule BroadwayAnomalyResponse.Producer do
-  @moduledoc false
+  @moduledoc """
+  The GenStage producer that feeds the Broadway pipeline.
+
+  Beginner note:
+  Broadway still needs a producer underneath. This module looks a lot like the
+  GenStage producer from the previous chapter because Broadway builds on the same
+  demand-driven idea.
+  """
 
   use GenStage
 
@@ -22,6 +29,7 @@ defmodule BroadwayAnomalyResponse.Producer do
   end
 
   defp dispatch(%{queue: queue, demand: demand} = state) do
+    # Broadway processors only get as many events as downstream demand allows.
     amount = min(:queue.len(queue), demand)
     {items, rest} = pop_many(queue, amount, [])
     {Enum.reverse(items), %{state | queue: rest, demand: demand - amount}}

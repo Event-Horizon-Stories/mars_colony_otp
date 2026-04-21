@@ -1,5 +1,11 @@
 defmodule ColonyControlTree.DomainService do
-  @moduledoc false
+  @moduledoc """
+  A tiny named service used to make top-level branches visible in the runtime.
+
+  This process is intentionally minimal. Its job is to give the lesson a
+  concrete process under each branch so beginners can look it up, inspect it,
+  and even crash it on purpose.
+  """
 
   use GenServer
 
@@ -19,6 +25,7 @@ defmodule ColonyControlTree.DomainService do
   def handle_call(:snapshot, _from, state), do: {:reply, state, state}
 
   def handle_call(:induce_failure, _from, state) do
+    # We stop deliberately so the supervising branch can show its restart behavior.
     {:stop, {:shutdown, :simulated_failure}, :ok, state}
   end
 end

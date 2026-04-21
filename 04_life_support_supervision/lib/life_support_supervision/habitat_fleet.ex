@@ -1,5 +1,10 @@
 defmodule LifeSupportSupervision.HabitatFleet do
-  @moduledoc false
+  @moduledoc """
+  Starts habitat supervision trees as the colony grows.
+
+  This module is a `DynamicSupervisor` because habitats are created at runtime.
+  Each child it starts is not one worker, but a whole `HabitatSupervisor` tree.
+  """
 
   use DynamicSupervisor
 
@@ -8,6 +13,7 @@ defmodule LifeSupportSupervision.HabitatFleet do
   end
 
   def start_habitat(id) do
+    # Each new habitat gets its own subtree of life-support processes.
     DynamicSupervisor.start_child(__MODULE__, {LifeSupportSupervision.HabitatSupervisor, id})
   end
 

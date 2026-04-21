@@ -1,5 +1,12 @@
 defmodule IncidentCommander.Commander do
-  @moduledoc false
+  @moduledoc """
+  Owns the live state of the colony's incident response.
+
+  Beginner note:
+  this is an orchestration process. Its job is not just to forward a message. It
+  keeps a durable view of "what incidents are active?" and "what response did we
+  take?" while also triggering repair work.
+  """
 
   use GenServer
 
@@ -11,6 +18,7 @@ defmodule IncidentCommander.Commander do
 
   @impl true
   def init(_opts) do
+    # Subscribe after init so startup stays simple and the mailbox remains explicit.
     send(self(), :subscribe)
     {:ok, %{active_incidents: [], response_log: []}}
   end
@@ -27,7 +35,9 @@ defmodule IncidentCommander.Commander do
 
     next_state = %{
       state
-      | active_incidents: state.active_incidents ++ [alert],
+      | # Keep the raw alert so operators can inspect which incidents are still active.
+        active_incidents: state.active_incidents ++ [alert],
+        # Keep a separate human-readable response trail for the tutorial.
         response_log: state.response_log ++ ["reroute load and dispatch #{alert.system} repair"]
     }
 

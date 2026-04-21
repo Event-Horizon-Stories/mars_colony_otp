@@ -1,5 +1,10 @@
 defmodule DynamicRovers.RoverSupervisor do
-  @moduledoc false
+  @moduledoc """
+  Starts rovers only when a mission actually needs one.
+
+  This is the chapter's first clear example of a worker whose lifetime is driven
+  by runtime demand instead of application startup.
+  """
 
   use DynamicSupervisor
 
@@ -12,6 +17,7 @@ defmodule DynamicRovers.RoverSupervisor do
       Supervisor.child_spec(
         {DynamicRovers.Rover, Keyword.merge(opts, id: id)},
         id: {:rover, id},
+        # A retired rover should not come back automatically.
         restart: :temporary
       )
 

@@ -1,5 +1,11 @@
 defmodule GenstageResourcePipeline.AnomalySink do
-  @moduledoc false
+  @moduledoc """
+  The final consumer in the GenStage pipeline.
+
+  Beginner note:
+  this sink does not produce more events. Its job is to inspect normalized data
+  and notify the outside world when something crosses the anomaly threshold.
+  """
 
   use GenStage
 
@@ -18,6 +24,7 @@ defmodule GenstageResourcePipeline.AnomalySink do
   def handle_events(events, _from, state) do
     Enum.each(events, fn event ->
       if event[:temperature_c] && event.temperature_c >= 65.0 do
+        # Send a small, clear anomaly message instead of exposing the whole pipeline internals.
         send(
           state.notify,
           {:anomaly_detected, %{sensor_id: event.sensor_id, temperature_c: event.temperature_c}}

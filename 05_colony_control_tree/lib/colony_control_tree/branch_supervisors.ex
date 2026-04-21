@@ -1,5 +1,11 @@
 defmodule ColonyControlTree.OperationsSupervisor do
-  @moduledoc false
+  @moduledoc """
+  Owns the operations branch of the colony tree.
+
+  Splitting the root into smaller supervisors makes the runtime map look more
+  like the real system. Operations and communications are separate branches
+  because they are separate domains.
+  """
 
   use Supervisor
 
@@ -10,6 +16,7 @@ defmodule ColonyControlTree.OperationsSupervisor do
   @impl true
   def init(_opts) do
     children = [
+      # Mission control and storage belong to the same domain branch here.
       Supervisor.child_spec({ColonyControlTree.DomainService, service: :mission_control},
         id: :mission_control_service
       ),
@@ -23,7 +30,9 @@ defmodule ColonyControlTree.OperationsSupervisor do
 end
 
 defmodule ColonyControlTree.CommunicationsSupervisor do
-  @moduledoc false
+  @moduledoc """
+  Owns the communications branch of the colony tree.
+  """
 
   use Supervisor
 

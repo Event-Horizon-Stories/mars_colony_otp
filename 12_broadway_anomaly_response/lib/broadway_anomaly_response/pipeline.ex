@@ -1,5 +1,12 @@
 defmodule BroadwayAnomalyResponse.Pipeline do
-  @moduledoc false
+  @moduledoc """
+  The Broadway pipeline for anomaly processing.
+
+  Beginner note:
+  Broadway gives a higher-level shape to the same streaming problem introduced
+  with `GenStage`: where events come from, how many processors exist, and which
+  events should be batched together.
+  """
 
   use Broadway
 
@@ -30,13 +37,17 @@ defmodule BroadwayAnomalyResponse.Pipeline do
     batcher = if data.severity == :critical, do: :critical, else: :default
 
     message
+    # Route critical events into a special batcher so they can be grouped later.
     |> Broadway.Message.put_batcher(batcher)
+    # Mark the payload so downstream code can tell it passed through classification.
     |> Broadway.Message.update_data(fn payload -> Map.put(payload, :classified, true) end)
   end
 
   @impl true
   def handle_batch(:critical, messages, _batch_info, context) do
     ids = Enum.map(messages, & &1.data.id)
+
+    # In this lesson, the "side effect" of the batch is notifying the test or caller.
     send(context.notify, {:critical_batch, ids})
     messages
   end

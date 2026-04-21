@@ -1,5 +1,11 @@
 defmodule BackpressureAndQueues.MaintenanceQueue do
-  @moduledoc false
+  @moduledoc """
+  Owns the maintenance intake queue for the colony.
+
+  The key lesson here is not "how to use `:queue`." The key lesson is that one
+  process should own both the buffered work and the overload decision so the
+  rest of the system has one place to ask about pressure.
+  """
 
   use GenServer
 
@@ -16,7 +22,9 @@ defmodule BackpressureAndQueues.MaintenanceQueue do
   def init(opts) do
     {:ok,
      %{
+       # Requests waiting to be worked on.
        queue: :queue.new(),
+       # Requests already handed out but not finished yet.
        inflight: %{},
        max_queue: Keyword.get(opts, :max_queue, 3)
      }}
@@ -26,6 +34,8 @@ defmodule BackpressureAndQueues.MaintenanceQueue do
   def handle_call({:enqueue, request}, _from, state) do
     next_queue = :queue.in(request, state.queue)
     next_state = %{state | queue: next_queue}
+
+    # Returning overload status here makes backpressure explicit to the caller.
     overloaded = :queue.len(next_queue) > state.max_queue
     {:reply, {:ok, overloaded}, next_state}
   end
@@ -36,6 +46,7 @@ defmodule BackpressureAndQueues.MaintenanceQueue do
         next_state = %{
           state
           | queue: rest,
+            # Once dispatched, the request moves out of the queue and into inflight tracking.
             inflight: Map.put(state.inflight, request.id, request)
         }
 
@@ -47,6 +58,7 @@ defmodule BackpressureAndQueues.MaintenanceQueue do
   end
 
   def handle_call({:ack, id}, _from, state) do
+    # Acknowledgement means the work is complete and should disappear from inflight.
     {:reply, :ok, %{state | inflight: Map.delete(state.inflight, id)}}
   end
 

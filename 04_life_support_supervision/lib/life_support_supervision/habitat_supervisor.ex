@@ -1,5 +1,11 @@
 defmodule LifeSupportSupervision.HabitatSupervisor do
-  @moduledoc false
+  @moduledoc """
+  Supervises the subsystems that keep one habitat alive.
+
+  The important lesson is the relationship between the children, not the child
+  code itself. Atmosphere, water, and thermal are siblings so they can fail
+  independently under `:one_for_one`.
+  """
 
   use Supervisor
 
@@ -24,6 +30,7 @@ defmodule LifeSupportSupervision.HabitatSupervisor do
       )
     ]
 
+    # Only restart the subsystem that crashed.
     Supervisor.init(children, strategy: :one_for_one)
   end
 end

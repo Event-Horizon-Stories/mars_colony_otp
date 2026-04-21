@@ -64,14 +64,6 @@ ColonySupervisor
    `- Broadway anomaly flow
 ```
 
-## Tooling
-
-If your shell is not already resolving asdf shims first, prefix commands like:
-
-```bash
-PATH="$HOME/.asdf/shims:$HOME/.asdf/bin:$PATH" mix test
-```
-
 ## Start Here
 
 Begin with [`01_habitat_bootstrap`](./01_habitat_bootstrap/README.md).

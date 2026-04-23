@@ -4,7 +4,9 @@ Lesson 9 gave maintenance work a real queue. That made pressure explicit, but
 only to code that calls the queue directly. Operators still need visibility.
 
 This chapter adds instrumentation so the colony can emit measurements while it
-works instead of forcing every observer to poll internal state manually.
+works instead of forcing every observer to poll internal state manually. At
+this point in the series, the colony needs to expose strain as it develops
+instead of waiting for operators to go looking for it.
 
 ## What You'll Learn
 
@@ -25,7 +27,8 @@ start noticing the shape of that survival. A quiet queue can hide strain for
 days. A loud queue can tell the truth before the shift commander has words for
 it.
 
-Observability is not self-regard. It is humility made operational.
+That kind of observability matters because what feels stable from the outside
+may already be bending inside.
 
 Operators want to know:
 

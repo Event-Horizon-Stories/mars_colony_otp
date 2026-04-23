@@ -6,7 +6,8 @@ Lesson 4 gave each habitat its own internal tree. Now the application itself
 needs a shape that reflects domain boundaries: operations, communications, and
 the habitat fleet should not all be a flat list of children. The settlement is
 no longer a cluster of rooms. It is beginning to resemble a civilization in
-miniature.
+miniature. Civilization, even in its smallest form, is mostly the problem of
+placing responsibility where it can be found again under pressure.
 
 ## What You'll Learn
 
@@ -25,7 +26,8 @@ mechanical. Someone watches the habitats. Someone watches storage. Someone
 keeps the signal line alive between sealed doors and a world that would rather
 have none of them here.
 
-Hierarchy here is not vanity. It is the visible shape of responsibility.
+Hierarchy here is not vanity. It is the visible shape of responsibility, and if
+the tree is clear enough, the colony can keep thinking even on its worst day.
 
 There are now distinct operational domains:
 

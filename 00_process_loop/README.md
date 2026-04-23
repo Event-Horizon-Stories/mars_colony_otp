@@ -5,8 +5,9 @@ transit.
 
 The ship has one pressurized habitat ring, one crew, and one operator watching
 oxygen, water, and power during the long flight in. The numbers repeat so often
-they start to sound like prayer, and prayer is often only another way of
-counting what cannot be wasted.
+they start to sound ritualistic, because nothing in transit can be wasted.
+Outside the hull, space offers no answer back. Inside, even a simple status
+reply feels like proof that order still exists.
 
 That makes this a good place to meet the raw process model.
 
@@ -30,8 +31,7 @@ The colony ship is still flying toward Mars.
 
 Nothing is a settlement yet. There is no base command tree, no rover fleet, and
 no maintenance district. There is only one transit habitat that has to stay
-alive for the rest of the journey, one moving room held together by routine and
-the private fear that routine may not be enough forever.
+alive for the rest of the journey, one moving room held together by routine.
 
 An operator in the flight deck only needs that habitat loop to do four things:
 
@@ -45,7 +45,8 @@ just one shipboard system talking to one long-lived process while Mars waits on
 the other side of months.
 
 Long before Mars becomes a home, it is a measure of how calmly people can face
-what does not care whether they live.
+what does not care whether they live, which makes the first loop feel smaller
+than history and more important than it has any right to be.
 
 That is exactly why this is a useful place to begin.
 

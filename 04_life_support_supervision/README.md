@@ -5,7 +5,9 @@ failure boundaries.
 
 In a real habitat, atmosphere control, water recycling, and thermal regulation
 should not all rise and fall together. This chapter gives each habitat an inner
-skeleton: a supervisor with multiple child services.
+skeleton: a supervisor with multiple child services. By this point, survival is
+no longer one machine doing one thing well. It is a set of promises that must
+fail separately if life is to continue.
 
 ## What You'll Learn
 
@@ -21,7 +23,8 @@ Each habitat is starting to feel less like one box and more like a machine made
 of smaller machines.
 
 To live anywhere harsh, a system has to learn the difference between injury and
-death.
+death, because a habitat that cannot tell those apart asks every small problem
+to become a catastrophe.
 
 Three subsystems matter immediately:
 

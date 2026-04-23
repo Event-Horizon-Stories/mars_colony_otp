@@ -5,7 +5,9 @@ next pressure point is continuous sensor traffic.
 
 Packets are now arriving from habitats, field equipment, and weather stations.
 At that point, one queue and a few direct calls are not enough. The colony
-needs staged flow with demand.
+needs staged flow with demand. The planet does not slow its signals down to
+match human attention, so the runtime has to become a better listener without
+becoming a worse thinker.
 
 ## What You'll Learn
 
@@ -25,7 +27,8 @@ small surprise. It needs a way to listen continuously without letting the flood
 turn meaning back into static.
 
 To listen well is not to hear more. It is to let signal arrive without
-surrendering judgment.
+surrendering judgment, which is true of software and even more true of life at
+the edge of a hostile world.
 
 Packets now need to move through a pipeline:
 

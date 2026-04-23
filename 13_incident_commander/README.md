@@ -5,7 +5,9 @@ next pressure point is no longer detection. It is response.
 
 When something critical happens, the colony needs one place to own the incident
 state, decide what action to take, and leave behind an inspectable record of
-the response.
+the response. Emergency has a way of scattering attention. This chapter is
+where the colony starts insisting that attention can be gathered back into one
+accountable shape.
 
 ## What You'll Learn
 
@@ -25,7 +27,9 @@ settlement needs judgment, sequence, and memory held together under pressure. A
 bad decision can be revised later. A scattered decision can leave no single
 shape behind, and that is worse.
 
-Command is the art of keeping meaning intact while fear tries to fracture it.
+The system needs somewhere to stand when everything around it begins moving at
+once, and command is the part of the runtime that has to keep meaning intact
+while fear tries to fracture it.
 
 A serious failure now implies coordination:
 

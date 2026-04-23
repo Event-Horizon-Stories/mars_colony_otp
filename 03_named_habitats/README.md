@@ -1,11 +1,10 @@
 # Lesson 03: The Colony Learns Names
 
-Lesson 2 gave us one live habitat process.
+One live habitat process is no longer enough.
 
-This chapter keeps that model and solves the next pressure point: once the
-colony has more than one habitat, it needs a way to address them by identity
-instead of by whoever happens to be holding the PID. Growth introduces a softer
-danger: confusion.
+Once the colony has more than one habitat, it needs a way to address them by
+identity instead of by whoever happens to be holding the PID. Growth introduces
+a softer danger: confusion.
 
 ## What You'll Learn
 

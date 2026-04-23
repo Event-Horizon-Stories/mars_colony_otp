@@ -1,7 +1,7 @@
 # Lesson 13: The Colony Learns to Command an Incident
 
-By lesson 12, the colony can move from sensor packets to anomaly batches. The
-next pressure point is no longer detection. It is response.
+The colony can move from sensor packets to anomaly batches. The next pressure
+point is no longer detection. It is response.
 
 When something critical happens, the colony needs one place to own the incident
 state, decide what action to take, and leave behind an inspectable record of

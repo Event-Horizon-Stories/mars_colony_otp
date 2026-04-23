@@ -1,8 +1,7 @@
 # Lesson 09: Maintenance Starts Backing Up
 
-By lesson 8, the colony can spread alerts across the runtime. That makes the
-system better informed, but it also makes pressure more visible. Work begins to
-pile up.
+The colony can spread alerts across the runtime. That makes the system better
+informed, but it also makes pressure more visible. Work begins to pile up.
 
 Maintenance requests are the first clear example. They arrive over time, they
 need to be buffered, and the colony needs to know when the queue is becoming a

@@ -1,12 +1,11 @@
 # Lesson 10: The Colony Starts Talking About Itself
 
-Lesson 9 gave maintenance work a real queue. That made pressure explicit, but
+Maintenance work already has a real queue. That made pressure explicit, but
 only to code that calls the queue directly. Operators still need visibility.
 
-This chapter adds instrumentation so the colony can emit measurements while it
-works instead of forcing every observer to poll internal state manually. At
-this point in the series, the colony needs to expose strain as it develops
-instead of waiting for operators to go looking for it.
+The colony needs to emit measurements while it works instead of forcing every
+observer to poll internal state manually. Strain has to become visible as it
+develops instead of waiting for operators to go looking for it.
 
 ## What You'll Learn
 

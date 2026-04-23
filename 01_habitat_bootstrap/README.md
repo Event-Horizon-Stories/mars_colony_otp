@@ -9,10 +9,10 @@ There is one habitat, one crew, and one growing pile of operational questions:
 - which maintenance work is waiting
 - how operators leave a visible trail of what changed
 
-This lesson stays deliberately local. No processes. No supervisors. No runtime
-identity. The goal is to make the habitat understandable before we make it
-concurrent. The first durable truths of a settlement are never heroic. They are
-counted in air reserves, maintenance debt, and visible strain.
+Nothing is concurrent yet. No processes. No supervisors. No runtime identity.
+The habitat has to become understandable before anything can be trusted to run.
+The first durable truths of a settlement are counted in air reserves,
+maintenance debt, and visible strain.
 
 ## What You'll Learn
 

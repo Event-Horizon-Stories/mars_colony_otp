@@ -2,12 +2,12 @@
 
 Static boot-time children are not enough anymore.
 
-By lesson 5, the colony already has a real root tree: habitats, mission
-control, storage, and communications. Now surface work starts appearing and
-disappearing during runtime. Rovers should exist when there is a mission, not
-because the application happened to start. The colony has learned how to
-survive indoors. Now it has to work beyond the airlock without making every
-surface mission part of the permanent tree.
+The colony already has a real root tree: habitats, mission control, storage,
+and communications. Now surface work starts appearing and disappearing during
+runtime. Rovers should exist when there is a mission, not because the
+application happened to start. The colony has learned how to survive indoors.
+Now it has to work beyond the airlock without making every surface mission part
+of the permanent tree.
 
 ## What You'll Learn
 

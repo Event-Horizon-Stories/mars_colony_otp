@@ -2,10 +2,10 @@
 
 Static boot-time children are not enough anymore.
 
-By lesson 5, the colony already has a real root tree: habitats, mission control,
-storage, and communications. Now surface work starts appearing and disappearing
-during runtime. Rovers should exist when there is a mission, not because the
-application happened to start.
+By lesson 5, the colony already has a real root tree: habitats, mission
+control, storage, and communications. Now surface work starts appearing and
+disappearing during runtime. Rovers should exist when there is a mission, not
+because the application happened to start.
 
 ## What You'll Learn
 
@@ -18,6 +18,14 @@ By the end of this lesson, you should understand:
 ## The Story
 
 The colony is expanding outward from the habitats.
+
+Sooner or later, every settlement on Mars has to open its doors and let the
+planet back in. Dust reaches the seals. Ridges hide useful things and dangerous
+ones. The horizon keeps offering distances that look short until someone has to
+cross them.
+
+The surface is where the colony discovers that survival cannot remain an indoor
+idea forever.
 
 Rovers are the first workers in the series whose lifecycle is driven by demand:
 

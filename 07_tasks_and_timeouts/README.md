@@ -4,8 +4,8 @@ By lesson 6, the colony can run habitats, operations branches, and a dynamic
 rover fleet. The next pressure point is computational work that does not deserve
 its own permanent process.
 
-Route planning is a good example. It matters, but it is bursty. The colony wants
-the result, not a long-lived route planner that hangs around forever.
+Route planning is a good example. It matters, but it is bursty. The colony
+wants the result, not a long-lived route planner that hangs around forever.
 
 ## What You'll Learn
 
@@ -24,6 +24,12 @@ The colony now has three kinds of work:
 - burst computation, like route planning
 
 That third kind is different from both of the others.
+
+Mars keeps forcing distinctions that softer worlds let people ignore. Some
+things must endure. Some things must arrive quickly and disappear. Some burdens
+grow heavier if they linger after their truth has been spoken.
+
+Some answers deserve memory. Some deserve only completion.
 
 When a rover needs a route, the colony wants to run the calculation, await the
 answer, and move on. The route planner does not need a public identity or a

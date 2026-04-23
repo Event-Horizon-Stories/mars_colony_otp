@@ -25,8 +25,15 @@ By the end of this lesson, you should understand:
 
 The first habitat on Mars is still run like a checklist on a wall.
 
-Nobody is reasoning about process trees yet. They are trying to answer a smaller
-question first:
+Outside the shell, the planet keeps its distance with a patience older than the
+species trying to inhabit it. Inside, survival is still intimate: a gauge, a
+log entry, a maintenance note left for the next exhausted pair of hands.
+
+A habitat begins as a discipline of attention before it becomes anything grand
+enough to be called a frontier.
+
+Nobody is reasoning about process trees yet. They are trying to answer a
+smaller question first:
 
 > what is true about the habitat right now?
 

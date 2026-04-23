@@ -1,12 +1,17 @@
 # mars_colony_otp
 
-`mars_colony_otp` teaches OTP by following the slow hardening of a Mars colony.
+`mars_colony_otp` teaches OTP through the slow hardening of a Mars colony.
 
 The series begins with one raw habitat process loop and one habitat that barely
-knows how to keep a clean ledger.
-It ends with a supervised colony that can launch rovers, fan out alerts, absorb
+knows how to keep a clean ledger. The walls are thin, the air is borrowed, and
+every ordinary routine is one more argument against the surrounding silence. It
+ends with a supervised colony that can launch rovers, fan out alerts, absorb
 load, process telemetry, coordinate incidents, carry selected operational
-memory across restarts, and reach a remote outpost node.
+memory across restarts, and reach a remote outpost node without pretending the
+planet has grown smaller.
+
+A colony begins not when people arrive, but when they learn which fragilities
+must be named before hope can last.
 
 Each chapter is its own standalone Mix project.
 
@@ -23,7 +28,9 @@ pressure:
 - a queue appears when work starts piling up
 - a pipeline appears when events stop looking like isolated messages
 
-This repo is trying to teach that pressure, not just the APIs.
+Mars does not forgive vague ownership. A missing boundary becomes a leak. An
+unnamed process becomes a room nobody reaches in time. A silent queue becomes a
+future problem already underway.
 
 ## The Journey
 
@@ -31,37 +38,37 @@ Lesson `00` is the manual-process prelude. Lessons `01` through `15` then grow
 the colony cumulatively:
 
 0. [`00_process_loop`](./00_process_loop/README.md)
-   One habitat is implemented as a raw mailbox loop so the reader can see the manual process model beneath OTP.
+   One transit habitat survives on a raw mailbox loop while the colony is still only a promise in flight.
 1. [`01_habitat_bootstrap`](./01_habitat_bootstrap/README.md)
-   One habitat learns to track oxygen, water, power, crew, and maintenance through pure state transitions.
+   The first habitat learns to account for oxygen, water, power, crew, and maintenance through pure state transitions.
 2. [`02_habitat_server`](./02_habitat_server/README.md)
-   That same habitat goes live as a `GenServer`.
+   That same habitat stops living in a notebook and begins answering as a `GenServer`.
 3. [`03_named_habitats`](./03_named_habitats/README.md)
-   The colony grows beyond one habitat and learns runtime identity with `Registry`.
+   The settlement spreads beyond one room and learns runtime identity with `Registry`.
 4. [`04_life_support_supervision`](./04_life_support_supervision/README.md)
-   Each habitat becomes a small supervision tree with restartable subsystems.
+   Each habitat grows an inner skeleton of restartable subsystems.
 5. [`05_colony_control_tree`](./05_colony_control_tree/README.md)
-   The colony adds top-level branches for operations, communications, and habitat fleet ownership.
+   Mission control, communications, storage, and the habitat fleet take their places in the root tree.
 6. [`06_dynamic_rovers`](./06_dynamic_rovers/README.md)
-   Surface work becomes dynamic, so rovers are created and retired at runtime.
+   Surface work starts arriving with the Martian day, so rovers are born and retired at runtime.
 7. [`07_tasks_and_timeouts`](./07_tasks_and_timeouts/README.md)
-   Not every unit of work deserves a permanent process, so route planning moves into supervised tasks.
+   The colony learns that not every hard calculation deserves a permanent process, so route planning moves into supervised tasks.
 8. [`08_pubsub_alerts`](./08_pubsub_alerts/README.md)
-   Alerts start spreading across the runtime without direct process-to-process coupling.
+   Warnings begin to outrun individual callers and spread across the runtime without direct coupling.
 9. [`09_backpressure_and_queues`](./09_backpressure_and_queues/README.md)
-   Maintenance intake gets explicit queue ownership and overload signaling.
+   Maintenance backlog becomes visible pressure with explicit queue ownership and overload signaling.
 10. [`10_telemetry_and_observability`](./10_telemetry_and_observability/README.md)
-    Queue behavior becomes observable with `:telemetry`.
+    The colony starts narrating its own strain through `:telemetry`.
 11. [`11_genstage_resource_pipeline`](./11_genstage_resource_pipeline/README.md)
-    Sensor packets turn into a demand-driven stream with `GenStage`.
+    Sensor traffic stops behaving like isolated messages and becomes a demand-driven stream with `GenStage`.
 12. [`12_broadway_anomaly_response`](./12_broadway_anomaly_response/README.md)
-    The anomaly path matures into a Broadway pipeline.
+    The anomaly path grows from a lesson pipeline into a Broadway-shaped operational surface.
 13. [`13_incident_commander`](./13_incident_commander/README.md)
-    Alerts become coordinated response instead of isolated messages.
+    Alerts become coordinated response, owned by a process that can still be questioned after the dust settles.
 14. [`14_persistent_shift_handoff`](./14_persistent_shift_handoff/README.md)
-    The colony learns how to persist selected operational memory across restarts.
+    The colony learns how to preserve selected memory across restarts and between crews.
 15. [`15_distributed_outposts`](./15_distributed_outposts/README.md)
-    Mission control reaches a remote outpost node and learns the first practical distributed Elixir tools.
+    Mission control reaches across the planet to a remote outpost node and meets the first practical distributed Elixir tools.
 
 ## Final Colony Shape
 
@@ -162,7 +169,13 @@ is available while you explore the running system.
 
 It covers the first durable colony runtime on Mars, before the later fleet
 autonomy, interplanetary signal, dispatch, trade bureaucracy, temporal
-anomalies, and far-future origin inquiry stories take shape.
+anomalies, and far-future origin inquiry stories take shape. This is the era
+when the edge of the known world is still only one planet away, and still wide
+enough to make every light in a habitat feel temporary against the dark.
+
+The farther the later stories travel, the more they inherit the lesson born
+here: the universe first becomes vast when a single room realizes how much
+depends on one more hour of order.
 
 ## Related Stories
 
@@ -178,4 +191,5 @@ anomalies, and far-future origin inquiry stories take shape.
 Begin with [`00_process_loop`](./00_process_loop/README.md).
 
 Before the colony gets a supervisor, a registry, or a streaming pipeline, it
-helps to see the raw shape of one mailbox-driven process.
+helps to see the raw shape of one mailbox-driven process and one fragile system
+learning what survival will cost.

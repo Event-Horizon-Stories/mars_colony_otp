@@ -4,7 +4,9 @@ This chapter lifts supervision one level higher.
 
 Lesson 4 gave each habitat its own internal tree. Now the application itself
 needs a shape that reflects domain boundaries: operations, communications, and
-the habitat fleet should not all be a flat list of children.
+the habitat fleet should not all be a flat list of children. The settlement is
+no longer a cluster of rooms. It is beginning to resemble a civilization in
+miniature.
 
 ## What You'll Learn
 
@@ -17,6 +19,13 @@ By the end of this lesson, you should understand:
 ## The Story
 
 The colony has outgrown the feeling of “some habitats plus a few helpers.”
+
+By now there are enough moving parts that order has become moral as much as
+mechanical. Someone watches the habitats. Someone watches storage. Someone
+keeps the signal line alive between sealed doors and a world that would rather
+have none of them here.
+
+Hierarchy here is not vanity. It is the visible shape of responsibility.
 
 There are now distinct operational domains:
 

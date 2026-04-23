@@ -1,11 +1,12 @@
 # Lesson 08: Alerts Start Moving Faster Than People
 
 By lesson 7, the colony has habitats, a root tree, dynamic rovers, and
-short-lived tasks for burst computation. The next pressure point is communication.
+short-lived tasks for burst computation. The next pressure point is
+communication.
 
 Warnings and incidents no longer belong to one caller. If a habitat drops below
-safe pressure or a rover reports distress, multiple parts of the colony may need
-to know about it at once.
+safe pressure or a rover reports distress, multiple parts of the colony may
+need to know about it at once.
 
 ## What You'll Learn
 
@@ -18,7 +19,17 @@ By the end of this lesson, you should understand:
 
 ## The Story
 
-The colony has grown into a place where one warning can matter to many people:
+The colony has grown into a place where one warning can matter to many people.
+
+In the early days, a problem could stay inside one room for a little while.
+That mercy is gone now. Trouble in one habitat can bend the whole day's work.
+A distress call from the surface can reach engineering, medicine, and command
+before anyone has time to decide how frightened to be.
+
+An alert is never only information. It changes the emotional weather of the
+colony.
+
+One warning can matter to many people:
 
 - mission control wants situational awareness
 - engineering wants the technical signal

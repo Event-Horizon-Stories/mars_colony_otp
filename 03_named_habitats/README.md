@@ -18,8 +18,14 @@ By the end of this lesson, you should understand:
 
 The colony is starting to spread.
 
-There is no longer just one habitat keeping a crew alive. There are several, and
-each one needs to be found by name:
+New pressure doors open. New corridors are sealed and unsealed. One habitat
+becomes several, and the settlement acquires the first feeling of distance
+inside itself.
+
+Names are how that distance stays human-sized.
+
+There is no longer just one habitat keeping a crew alive. There are several,
+and each one needs to be found by name:
 
 - `hab-a`
 - `hab-b`

@@ -4,8 +4,8 @@ By lesson 12, the colony can move from sensor packets to anomaly batches. The
 next pressure point is no longer detection. It is response.
 
 When something critical happens, the colony needs one place to own the incident
-state, decide what action to take, and leave behind an inspectable record of the
-response.
+state, decide what action to take, and leave behind an inspectable record of
+the response.
 
 ## What You'll Learn
 
@@ -19,6 +19,13 @@ By the end of this lesson, you should understand:
 
 The colony has reached the point where critical alerts mean more than “someone
 should know.”
+
+There is a moment in every emergency when information stops being enough. The
+settlement needs judgment, sequence, and memory held together under pressure. A
+bad decision can be revised later. A scattered decision can leave no single
+shape behind, and that is worse.
+
+Command is the art of keeping meaning intact while fear tries to fracture it.
 
 A serious failure now implies coordination:
 

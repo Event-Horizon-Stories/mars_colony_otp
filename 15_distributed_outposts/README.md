@@ -16,7 +16,8 @@ The next pressure is geography.
 
 One node is no longer enough. A remote outpost is running its own copy of the
 colony, and mission control needs a clean way to connect to it, ask for state,
-and discover one small globally named service.
+and discover one small globally named service. Distance on one planet is still
+distance.
 
 ## What You'll Learn
 
@@ -33,7 +34,10 @@ By the end of this lesson, you should understand:
 The colony has outgrown one machine room.
 
 Mission control still runs at the main base, but now there is a remote outpost
-operating on another node. That outpost boots the same application tree as
+operating on another node. Between them lies enough dust, weather, and empty
+ground to remind everyone that the edge of the world does not have to be
+interstellar to feel immense. Even on one planet, the known world can end just
+beyond the last reliable reply. That outpost boots the same application tree as
 mission control, but this lesson only asks about the parts that matter first:
 
 - habitat tree
@@ -49,8 +53,8 @@ Mission control needs to do three small but real things:
 - ask the remote node for incident and queue state
 - find one remote outpost beacon through a global name instead of a raw PID
 
-That is enough to introduce distributed Elixir without turning the tutorial into
-cluster choreography.
+That is enough to introduce distributed Elixir without turning the tutorial
+into cluster choreography.
 
 The core OTP idea stays small. The interactive setup is a little heavier because
 starting a second BEAM node introduces some operational mechanics all at once:

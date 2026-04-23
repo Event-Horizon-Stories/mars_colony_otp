@@ -4,8 +4,8 @@ By lesson 10, the colony can emit telemetry from discrete runtime actions. The
 next pressure point is continuous sensor traffic.
 
 Packets are now arriving from habitats, field equipment, and weather stations.
-At that point, one queue and a few direct calls are not enough. The colony needs
-staged flow with demand.
+At that point, one queue and a few direct calls are not enough. The colony
+needs staged flow with demand.
 
 ## What You'll Learn
 
@@ -19,14 +19,22 @@ By the end of this lesson, you should understand:
 
 The colony’s sensor traffic has grown past the shape of isolated events.
 
+Mars is speaking now in weather fronts, thermal drift, mineral noise, and
+instrument chatter. The settlement cannot afford to treat each packet like a
+small surprise. It needs a way to listen continuously without letting the flood
+turn meaning back into static.
+
+To listen well is not to hear more. It is to let signal arrive without
+surrendering judgment.
+
 Packets now need to move through a pipeline:
 
 - raw packets enter the system
 - packets are normalized into a common shape
 - suspicious packets are delivered to an anomaly sink
 
-This is the first chapter where the runtime starts to look like a data pipeline,
-not just a set of service processes.
+This is the first chapter where the runtime starts to look like a data
+pipeline, not just a set of service processes.
 
 ## The OTP Concept
 

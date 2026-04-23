@@ -20,9 +20,14 @@ By the end of this lesson, you should understand:
 
 One habitat is no longer enough as a ledger in a notebook.
 
-Operators need the habitat to stay alive, answer questions, and accept updates
-over time. That is a different requirement from lesson 1. We do not just want a
-data structure anymore. We want a long-lived service.
+There comes a point in any hard place when keeping track by hand begins to feel
+like superstition. The room has to keep its own truth between visits. Operators
+need the habitat to stay alive, answer questions, and accept updates over time.
+That is a different requirement from lesson 1. We do not just want a data
+structure anymore. We want a long-lived service.
+
+Continuity is a kind of trust. On Mars, trust has to survive the moment when no
+one is looking directly at the system that keeps them alive.
 
 ## The OTP Concept
 

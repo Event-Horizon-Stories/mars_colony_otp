@@ -20,6 +20,9 @@ By the end of this lesson, you should understand:
 Each habitat is starting to feel less like one box and more like a machine made
 of smaller machines.
 
+To live anywhere harsh, a system has to learn the difference between injury and
+death.
+
 Three subsystems matter immediately:
 
 - atmosphere control

@@ -4,7 +4,9 @@ Before the first habitat is bolted into Martian soil, the colony is still in
 transit.
 
 The ship has one pressurized habitat ring, one crew, and one operator watching
-oxygen, water, and power during the long flight in.
+oxygen, water, and power during the long flight in. The numbers repeat so often
+they start to sound like prayer, and prayer is often only another way of
+counting what cannot be wasted.
 
 That makes this a good place to meet the raw process model.
 
@@ -28,7 +30,8 @@ The colony ship is still flying toward Mars.
 
 Nothing is a settlement yet. There is no base command tree, no rover fleet, and
 no maintenance district. There is only one transit habitat that has to stay
-alive for the rest of the journey.
+alive for the rest of the journey, one moving room held together by routine and
+the private fear that routine may not be enough forever.
 
 An operator in the flight deck only needs that habitat loop to do four things:
 
@@ -38,7 +41,11 @@ An operator in the flight deck only needs that habitat loop to do four things:
 - stop cleanly
 
 Nothing is supervised. Nothing is named. Nothing is structured for reuse. It is
-just one shipboard system talking to one long-lived process.
+just one shipboard system talking to one long-lived process while Mars waits on
+the other side of months.
+
+Long before Mars becomes a home, it is a measure of how calmly people can face
+what does not care whether they live.
 
 That is exactly why this is a useful place to begin.
 

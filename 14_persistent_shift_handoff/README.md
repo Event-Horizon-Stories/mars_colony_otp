@@ -29,10 +29,14 @@ By the end of this lesson, you should understand:
 
 The colony has made it through detection, response, and repair.
 
-Now the shift is ending.
+Now the shift is ending. Boots slow down in the corridor. Voices get quieter.
+The planet outside remains exactly as patient as it was at dawn.
 
-The next crew should not need to reconstruct everything from memory. They need a
-handoff surface that can preserve selected summaries across a restart:
+Memory is how a settlement refuses to begin again from ignorance every time the
+lights flicker.
+
+The next crew should not need to reconstruct everything from memory. They need
+a handoff surface that can preserve selected summaries across a restart:
 
 - incident summaries
 - shift notes

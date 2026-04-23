@@ -3,8 +3,8 @@
 Lesson 11 gave the colony a real `GenStage` pipeline. That was the right next
 step for learning demand-driven flow, but it still sits close to the machinery.
 
-Once anomaly handling starts to feel like operational infrastructure, Broadway is
-a better teaching surface. It keeps the staged flow idea while adding a more
+Once anomaly handling starts to feel like operational infrastructure, Broadway
+is a better teaching surface. It keeps the staged flow idea while adding a more
 comfortable shape for processing and batching.
 
 ## What You'll Learn
@@ -18,6 +18,13 @@ By the end of this lesson, you should understand:
 ## The Story
 
 The sensor path is now mature enough to deserve production-style handling.
+
+By now the colony has lived with enough strange readings to know that mystery
+is not the exceptional state of the universe. It is the ordinary one. The real
+question is whether the runtime can meet strangeness with discipline instead of
+thrashing.
+
+Maturity is not the end of uncertainty. It is a steadier way of receiving it.
 
 The colony still needs the same high-level steps:
 

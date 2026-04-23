@@ -20,14 +20,21 @@ By the end of this lesson, you should understand:
 
 The maintenance queue has become important enough to measure.
 
+At a certain scale, a colony has to stop merely surviving its own workload and
+start noticing the shape of that survival. A quiet queue can hide strain for
+days. A loud queue can tell the truth before the shift commander has words for
+it.
+
+Observability is not self-regard. It is humility made operational.
+
 Operators want to know:
 
 - how deep the queue is getting
 - when work is dispatched
 - which requests triggered overload conditions
 
-The queue still owns the truth. Telemetry simply lets the runtime publish useful
-facts about that truth as it changes.
+The queue still owns the truth. Telemetry simply lets the runtime publish
+useful facts about that truth as it changes.
 
 ## The OTP Concept
 

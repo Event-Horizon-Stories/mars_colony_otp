@@ -20,6 +20,14 @@ By the end of this lesson, you should understand:
 
 The colony is now noisy enough that maintenance cannot stay informal.
 
+Every new system the colony gains gives it one more way to endure and one more
+way to break. Seals age. Filters clog. Rover joints grind red dust into their
+own patience. The work begins to stack up not because anyone is careless, but
+because survival on Mars is made of wearing things out.
+
+Backlog is what the future looks like when obligations arrive faster than
+strength.
+
 Requests arrive from many directions:
 
 - habitat service issues

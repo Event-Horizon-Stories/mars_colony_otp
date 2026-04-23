@@ -1,13 +1,13 @@
 # Lesson 05: Mission Control Gets a Real Tree
 
-This chapter lifts supervision one level higher.
+The colony has outgrown a flat root.
 
-Lesson 4 gave each habitat its own internal tree. Now the application itself
+Each habitat already carries its own internal tree. Now the application itself
 needs a shape that reflects domain boundaries: operations, communications, and
 the habitat fleet should not all be a flat list of children. The settlement is
 no longer a cluster of rooms. It is beginning to resemble a civilization in
-miniature. Civilization, even in its smallest form, is mostly the problem of
-placing responsibility where it can be found again under pressure.
+miniature, where responsibility has to be placed where it can be found again
+under pressure.
 
 ## What You'll Learn
 

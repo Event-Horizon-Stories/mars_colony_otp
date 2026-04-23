@@ -1,23 +1,24 @@
 # mars_colony_otp
 
-`mars_colony_otp` teaches OTP through the slow hardening of a Mars colony.
+The first durable colony on Mars begins with one raw habitat process loop and
+one habitat that barely knows how to keep a clean ledger. The walls are thin,
+the air is borrowed, and every ordinary routine is one more argument against
+the surrounding silence.
 
-The series begins with one raw habitat process loop and one habitat that barely
-knows how to keep a clean ledger. The walls are thin, the air is borrowed, and
-every ordinary routine is one more argument against the surrounding silence. It
-ends with a supervised colony that can launch rovers, fan out alerts, absorb
-load, process telemetry, coordinate incidents, carry selected operational
-memory across restarts, and reach a remote outpost node without pretending the
-planet has grown smaller.
+From there the runtime hardens one pressure at a time. Habitats get names. Life
+support learns how to fail locally. Surface work begins to appear only when the
+planet asks for it. Queues reveal load, telemetry reveals strain, and the line
+eventually stretches to a remote outpost without pretending the planet has
+grown smaller.
 
-This story starts close to the walls, where the colony first learns which
-fragilities have to be named before hope can last.
+The story stays close to the walls because that is where the colony first
+learns which fragilities have to be named before hope can last.
 
 Each chapter is its own standalone Mix project.
 
-Lesson `00` is a prelude that shows the raw mailbox loop underneath OTP. From
-lesson `01` onward, the story becomes cumulative. Later lessons do not throw
-earlier ones away. They inherit the colony that came before and extend it.
+Lesson `00` is a prelude that exposes the raw mailbox loop underneath OTP. From
+lesson `01` onward, the colony keeps the shape it has already earned and
+extends it under new pressure.
 
 That matters because OTP is easiest to learn when the abstractions arrive under
 pressure:

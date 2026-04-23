@@ -1,6 +1,6 @@
 # Lesson 14: One Shift Teaches the Next
 
-By lesson 13, the colony has become a believable runtime:
+By now the colony has become a believable runtime:
 
 - habitats with supervised life-support subsystems
 - a top-level colony tree

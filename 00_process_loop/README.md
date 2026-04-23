@@ -9,11 +9,11 @@ they begin to sound like procedure, because nothing in transit can be wasted.
 Outside the hull, space offers no answer back. Inside, even a simple status
 reply feels like proof that order still exists.
 
-That makes this a good place to meet the raw process model.
+The raw process model belongs here.
 
-We start one transit habitat with `spawn_link/1`, keep its state in a recursive
-loop, send it messages, and manually wait for replies. The code is intentionally
-a little awkward. That awkwardness is the lesson.
+One transit habitat starts with `spawn_link/1`, keeps its state in a recursive
+loop, receives messages, and answers them by hand. The code is a little awkward
+because nothing has been abstracted away yet.
 
 ## What You'll Learn
 

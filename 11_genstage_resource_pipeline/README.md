@@ -1,7 +1,7 @@
 # Lesson 11: Sensor Traffic Becomes a Real Stream
 
-By lesson 10, the colony can emit telemetry from discrete runtime actions. The
-next pressure point is continuous sensor traffic.
+The colony can emit telemetry from discrete runtime actions. The next pressure
+point is continuous sensor traffic.
 
 Packets are now arriving from habitats, field equipment, and weather stations.
 At that point, one queue and a few direct calls are not enough. The colony

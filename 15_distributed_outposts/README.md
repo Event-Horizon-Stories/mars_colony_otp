@@ -1,6 +1,6 @@
 # Lesson 15: The Colony Spreads Across Nodes
 
-By lesson 14, the colony can run a believable single-node runtime:
+The colony can now run a believable single-node runtime:
 
 - habitats with supervised life-support subsystems
 - a top-level colony tree

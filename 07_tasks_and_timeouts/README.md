@@ -1,8 +1,8 @@
 # Lesson 07: The Colony Learns Which Work Should Stay Short
 
-By lesson 6, the colony can run habitats, operations branches, and a dynamic
-rover fleet. The next pressure point is computational work that does not deserve
-its own permanent process.
+The colony can run habitats, operations branches, and a dynamic rover fleet.
+The next pressure point is computational work that does not deserve its own
+permanent process.
 
 Route planning is a good example. It matters, but it is bursty. The colony
 wants the result, not a long-lived route planner that hangs around forever.

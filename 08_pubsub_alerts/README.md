@@ -1,8 +1,7 @@
 # Lesson 08: Alerts Start Moving Faster Than People
 
-By lesson 7, the colony has habitats, a root tree, dynamic rovers, and
-short-lived tasks for burst computation. The next pressure point is
-communication.
+The colony has habitats, a root tree, dynamic rovers, and short-lived tasks
+for burst computation. The next pressure point is communication.
 
 Warnings and incidents no longer belong to one caller. If a habitat drops below
 safe pressure or a rover reports distress, multiple parts of the colony may

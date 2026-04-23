@@ -4,10 +4,10 @@ The colony now has multiple named habitats. That solves identity, but not
 failure boundaries.
 
 In a real habitat, atmosphere control, water recycling, and thermal regulation
-should not all rise and fall together. This chapter gives each habitat an inner
-skeleton: a supervisor with multiple child services. By this point, survival is
-no longer one machine doing one thing well. It is a set of promises that must
-fail separately if life is to continue.
+should not all rise and fall together. Each habitat needs an inner skeleton: a
+supervisor with multiple child services. By this point, survival is no longer
+one machine doing one thing well. It is a set of promises that must fail
+separately if life is to continue.
 
 ## What You'll Learn
 

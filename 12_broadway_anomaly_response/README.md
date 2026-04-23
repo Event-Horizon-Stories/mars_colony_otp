@@ -1,7 +1,7 @@
 # Lesson 12: The Anomaly Path Becomes Production-Shaped
 
-Lesson 11 gave the colony a real `GenStage` pipeline. That was the right next
-step for learning demand-driven flow, but it still sits close to the machinery.
+The colony already has a real `GenStage` pipeline. It handles demand-driven
+flow, but it still sits close to the machinery.
 
 Once anomaly handling starts to feel like operational infrastructure, Broadway
 is a better teaching surface. It keeps the staged flow idea while adding a more

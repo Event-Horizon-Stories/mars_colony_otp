@@ -1,12 +1,11 @@
 # Lesson 02: The Habitat Goes Live
 
-In lesson 1, the habitat became understandable.
+The habitat is no longer just a ledger in a notebook.
 
-In lesson 2, the habitat becomes live.
-
-The resource logic stays the same in spirit, but the habitat now lives behind a
-`GenServer`. The caller no longer threads state forward by hand. The process
-owns it. The habitat can now remain itself between visits.
+The resource logic stays the same in spirit, but now it has to stay alive
+between visits. It lives behind a `GenServer`. The caller no longer threads
+state forward by hand. The process owns it, and the habitat can remain itself
+over time.
 
 ## What You'll Learn
 

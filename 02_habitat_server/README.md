@@ -8,6 +8,9 @@ The resource logic stays the same in spirit, but the habitat now lives behind a
 `GenServer`. The caller no longer threads state forward by hand. The process
 owns it.
 
+That shift is quiet on the page, but it changes the emotional shape of the
+system. The habitat can now remain itself between visits.
+
 ## What You'll Learn
 
 By the end of this lesson, you should understand:
@@ -28,6 +31,9 @@ structure anymore. We want a long-lived service.
 
 Continuity is a kind of trust. On Mars, trust has to survive the moment when no
 one is looking directly at the system that keeps them alive.
+
+The room has to keep faith with its occupants even while they are busy
+somewhere else.
 
 ## The OTP Concept
 

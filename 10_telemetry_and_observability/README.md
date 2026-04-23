@@ -6,6 +6,9 @@ only to code that calls the queue directly. Operators still need visibility.
 This chapter adds instrumentation so the colony can emit measurements while it
 works instead of forcing every observer to poll internal state manually.
 
+A mature runtime does not only endure stress. It learns how to describe it
+without waiting to be interrogated.
+
 ## What You'll Learn
 
 By the end of this lesson, you should understand:
@@ -26,6 +29,9 @@ days. A loud queue can tell the truth before the shift commander has words for
 it.
 
 Observability is not self-regard. It is humility made operational.
+
+The system admits that what feels stable from the outside may already be bending
+inside.
 
 Operators want to know:
 

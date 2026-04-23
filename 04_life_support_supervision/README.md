@@ -7,6 +7,9 @@ In a real habitat, atmosphere control, water recycling, and thermal regulation
 should not all rise and fall together. This chapter gives each habitat an inner
 skeleton: a supervisor with multiple child services.
 
+By this point, survival is no longer one machine doing one thing well. It is a
+set of promises that must fail separately if life is to continue.
+
 ## What You'll Learn
 
 By the end of this lesson, you should understand:
@@ -22,6 +25,9 @@ of smaller machines.
 
 To live anywhere harsh, a system has to learn the difference between injury and
 death.
+
+A habitat that cannot tell those apart asks every small problem to become a
+catastrophe.
 
 Three subsystems matter immediately:
 

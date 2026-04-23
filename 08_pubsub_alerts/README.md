@@ -8,6 +8,8 @@ Warnings and incidents no longer belong to one caller. If a habitat drops below
 safe pressure or a rover reports distress, multiple parts of the colony may
 need to know about it at once.
 
+The colony has reached the age where silence itself can become a systems bug.
+
 ## What You'll Learn
 
 By the end of this lesson, you should understand:
@@ -28,6 +30,8 @@ before anyone has time to decide how frightened to be.
 
 An alert is never only information. It changes the emotional weather of the
 colony.
+
+Once a settlement grows large enough, even fear needs a routing surface.
 
 One warning can matter to many people:
 

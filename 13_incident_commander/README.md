@@ -7,6 +7,9 @@ When something critical happens, the colony needs one place to own the incident
 state, decide what action to take, and leave behind an inspectable record of
 the response.
 
+Emergency has a way of scattering attention. This chapter is where the colony
+starts insisting that attention can be gathered back into one accountable shape.
+
 ## What You'll Learn
 
 By the end of this lesson, you should understand:
@@ -26,6 +29,9 @@ bad decision can be revised later. A scattered decision can leave no single
 shape behind, and that is worse.
 
 Command is the art of keeping meaning intact while fear tries to fracture it.
+
+The system needs somewhere to stand when everything around it begins moving at
+once.
 
 A serious failure now implies coordination:
 

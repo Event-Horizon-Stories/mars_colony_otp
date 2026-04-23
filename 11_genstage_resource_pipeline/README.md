@@ -7,6 +7,9 @@ Packets are now arriving from habitats, field equipment, and weather stations.
 At that point, one queue and a few direct calls are not enough. The colony
 needs staged flow with demand.
 
+The planet does not slow its signals down to match human attention. The runtime
+has to become a better listener without becoming a worse thinker.
+
 ## What You'll Learn
 
 By the end of this lesson, you should understand:
@@ -26,6 +29,9 @@ turn meaning back into static.
 
 To listen well is not to hear more. It is to let signal arrive without
 surrendering judgment.
+
+That is true of software, and it is even more true of life at the edge of a
+hostile world.
 
 Packets now need to move through a pipeline:
 

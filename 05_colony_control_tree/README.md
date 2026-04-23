@@ -8,6 +8,9 @@ the habitat fleet should not all be a flat list of children. The settlement is
 no longer a cluster of rooms. It is beginning to resemble a civilization in
 miniature.
 
+Civilization, even in its smallest form, is mostly the problem of placing
+responsibility where it can be found again under pressure.
+
 ## What You'll Learn
 
 By the end of this lesson, you should understand:
@@ -26,6 +29,9 @@ keeps the signal line alive between sealed doors and a world that would rather
 have none of them here.
 
 Hierarchy here is not vanity. It is the visible shape of responsibility.
+
+If the tree is clear enough, the colony can keep thinking even on its worst
+day.
 
 There are now distinct operational domains:
 

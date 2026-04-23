@@ -7,6 +7,9 @@ Once anomaly handling starts to feel like operational infrastructure, Broadway
 is a better teaching surface. It keeps the staged flow idea while adding a more
 comfortable shape for processing and batching.
 
+By now the colony knows that strange readings are not interruptions to the
+story. They are part of what the world has been saying all along.
+
 ## What You'll Learn
 
 By the end of this lesson, you should understand:
@@ -25,6 +28,9 @@ question is whether the runtime can meet strangeness with discipline instead of
 thrashing.
 
 Maturity is not the end of uncertainty. It is a steadier way of receiving it.
+
+The better the runtime gets, the less drama it needs to stay composed in the
+presence of the unknown.
 
 The colony still needs the same high-level steps:
 

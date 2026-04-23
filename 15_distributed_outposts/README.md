@@ -19,6 +19,9 @@ colony, and mission control needs a clean way to connect to it, ask for state,
 and discover one small globally named service. Distance on one planet is still
 distance.
 
+Once the settlement extends beyond one machine room, geography becomes a
+systems concern and loneliness becomes architectural.
+
 ## What You'll Learn
 
 By the end of this lesson, you should understand:
@@ -39,6 +42,9 @@ ground to remind everyone that the edge of the world does not have to be
 interstellar to feel immense. Even on one planet, the known world can end just
 beyond the last reliable reply. That outpost boots the same application tree as
 mission control, but this lesson only asks about the parts that matter first:
+
+Mars does not need stars to feel infinite. Sometimes one delayed answer across
+red ground is enough.
 
 - habitat tree
 - repair queue

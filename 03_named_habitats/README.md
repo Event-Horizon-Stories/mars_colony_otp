@@ -6,6 +6,9 @@ This chapter keeps that model and solves the next pressure point: once the
 colony has more than one habitat, it needs a way to address them by identity
 instead of by whoever happens to be holding the PID.
 
+Growth introduces a softer kind of danger: confusion. A place can fail simply
+because the wrong door was opened too late.
+
 ## What You'll Learn
 
 By the end of this lesson, you should understand:
@@ -23,6 +26,9 @@ becomes several, and the settlement acquires the first feeling of distance
 inside itself.
 
 Names are how that distance stays human-sized.
+
+They let a growing settlement remain speakable even as it becomes more than one
+pair of hands can hold in memory.
 
 There is no longer just one habitat keeping a crew alive. There are several,
 and each one needs to be found by name:

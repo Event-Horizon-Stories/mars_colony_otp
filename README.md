@@ -13,6 +13,9 @@ planet has grown smaller.
 A colony begins not when people arrive, but when they learn which fragilities
 must be named before hope can last.
 
+That is why this story starts close to the walls before it ever looks toward
+the wider sky.
+
 Each chapter is its own standalone Mix project.
 
 Lesson `00` is a prelude that shows the raw mailbox loop underneath OTP. From

@@ -13,6 +13,9 @@ This lesson stays deliberately local. No processes. No supervisors. No runtime
 identity. The goal is to make the habitat understandable before we make it
 concurrent.
 
+The first durable truths of a settlement are never heroic. They are counted in
+air reserves, maintenance debt, and how honestly a room remembers its own strain.
+
 ## What You'll Learn
 
 By the end of this lesson, you should understand:
@@ -31,6 +34,9 @@ log entry, a maintenance note left for the next exhausted pair of hands.
 
 A habitat begins as a discipline of attention before it becomes anything grand
 enough to be called a frontier.
+
+Mars makes ceremony out of ordinary care because ordinary care is what keeps
+the frontier from becoming a graveyard.
 
 Nobody is reasoning about process trees yet. They are trying to answer a
 smaller question first:

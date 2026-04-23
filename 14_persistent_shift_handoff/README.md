@@ -15,7 +15,6 @@ The final gap is memory.
 
 If the app restarts or one shift hands off to the next, selected operational
 summaries should survive. Not everything needs persistence. But some things do.
-
 Without that, the colony keeps paying twice for every hard lesson: once in the
 event itself and once again in forgetting.
 
@@ -36,9 +35,8 @@ Now the shift is ending. Boots slow down in the corridor. Voices get quieter.
 The planet outside remains exactly as patient as it was at dawn.
 
 Memory is how a settlement refuses to begin again from ignorance every time the
-lights flicker.
-
-On a world this unforgiving, forgetting is just another kind of avoidable loss.
+lights flicker, because on a world this unforgiving forgetting is just another
+kind of avoidable loss.
 
 The next crew should not need to reconstruct everything from memory. They need
 a handoff surface that can preserve selected summaries across a restart:

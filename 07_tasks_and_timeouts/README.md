@@ -6,7 +6,6 @@ its own permanent process.
 
 Route planning is a good example. It matters, but it is bursty. The colony
 wants the result, not a long-lived route planner that hangs around forever.
-
 There is wisdom in letting some work pass cleanly through the system instead of
 mistaking every necessary effort for an institution.
 
@@ -32,10 +31,9 @@ Mars keeps forcing distinctions that softer worlds let people ignore. Some
 things must endure. Some things must arrive quickly and disappear. Some burdens
 grow heavier if they linger after their truth has been spoken.
 
-Some answers deserve memory. Some deserve only completion.
-
-The trick is knowing which kind of answer is in your hands before the runtime
-starts carrying it longer than it should.
+Some answers deserve memory. Some deserve only completion, and the trick is
+knowing which kind of answer is in your hands before the runtime starts
+carrying it longer than it should.
 
 When a rover needs a route, the colony wants to run the calculation, await the
 answer, and move on. The route planner does not need a public identity or a

@@ -25,8 +25,6 @@ instrument chatter. The settlement cannot afford to treat each packet like a
 small surprise. It needs a way to listen continuously without letting the flood
 turn meaning back into static.
 
-It has to let signal arrive without turning meaning back into static.
-
 Packets now need to move through a pipeline:
 
 - raw packets enter the system

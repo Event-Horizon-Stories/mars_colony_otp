@@ -6,8 +6,8 @@ By lesson 5, the colony already has a real root tree: habitats, mission
 control, storage, and communications. Now surface work starts appearing and
 disappearing during runtime. Rovers should exist when there is a mission, not
 because the application happened to start. The colony has learned how to
-survive indoors. Now it has to practice being curious beyond the airlock
-without confusing curiosity with permanence.
+survive indoors. Now it has to work beyond the airlock without making every
+surface mission part of the permanent tree.
 
 ## What You'll Learn
 
@@ -27,8 +27,8 @@ ones. The horizon keeps offering distances that look short until someone has to
 cross them.
 
 The surface is where the colony discovers that survival cannot remain an indoor
-idea forever, and sooner or later every living system on Mars has to decide how
-much of itself it is willing to send out into the cold.
+idea forever, and sooner or later every settlement has to decide how it will
+send work into the cold without sending the whole system with it.
 
 Rovers are the first workers in the series whose lifecycle is driven by demand:
 

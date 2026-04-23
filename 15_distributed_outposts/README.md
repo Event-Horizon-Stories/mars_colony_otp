@@ -18,7 +18,7 @@ One node is no longer enough. A remote outpost is running its own copy of the
 colony, and mission control needs a clean way to connect to it, ask for state,
 and discover one small globally named service. Distance on one planet is still
 distance. Once the settlement extends beyond one machine room, geography
-becomes a systems concern and loneliness becomes architectural.
+becomes part of the system design.
 
 ## What You'll Learn
 

@@ -12,7 +12,7 @@ planet has grown smaller.
 
 A colony begins not when people arrive, but when they learn which fragilities
 must be named before hope can last, which is why this story starts close to the
-walls before it ever looks toward the wider sky.
+walls before it looks toward the wider sky.
 
 Each chapter is its own standalone Mix project.
 

@@ -156,6 +156,21 @@ iex -S mix
 Every lesson includes `:observer` in `extra_applications`, so `:observer.start()`
 is available while you explore the running system.
 
+## Timeline
+
+`mars_colony_otp` sits at the beginning of the shared story timeline.
+
+It covers the first durable colony runtime on Mars, before the later interplanetary
+signal layer, trade bureaucracy, temporal anomalies, and far-future origin inquiry
+stories take shape.
+
+## Related Stories
+
+- Next era: [`signal_network`](https://github.com/Event-Horizon-Stories/signal_network)
+- Later institutions: [`galactic_trade_authority`](https://github.com/Event-Horizon-Stories/galactic_trade_authority)
+- Later temporal crisis: [`wormhole_protocol`](https://github.com/Event-Horizon-Stories/wormhole_protocol)
+- Far-future inquiry: [`horizon_engine`](https://github.com/Event-Horizon-Stories/horizon_engine)
+
 ## Start Here
 
 Begin with [`00_process_loop`](./00_process_loop/README.md).

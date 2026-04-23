@@ -21,13 +21,10 @@ By the end of this lesson, you should understand:
 
 The colony has outgrown the feeling of “some habitats plus a few helpers.”
 
-By now there are enough moving parts that order has become moral as much as
-mechanical. Someone watches the habitats. Someone watches storage. Someone
-keeps the signal line alive between sealed doors and a world that would rather
-have none of them here.
+By now there are enough moving parts that someone has to watch the habitats,
+someone has to watch storage, and someone has to keep the signal line alive.
 
-Hierarchy here is not vanity. It is the visible shape of responsibility, and if
-the tree is clear enough, the colony can keep thinking even on its worst day.
+Hierarchy here is the visible shape of responsibility.
 
 There are now distinct operational domains:
 

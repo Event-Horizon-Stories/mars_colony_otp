@@ -5,9 +5,7 @@ step for learning demand-driven flow, but it still sits close to the machinery.
 
 Once anomaly handling starts to feel like operational infrastructure, Broadway
 is a better teaching surface. It keeps the staged flow idea while adding a more
-comfortable shape for processing and batching. By now the colony knows that
-strange readings are not interruptions to the story. They are part of what the
-world has been saying all along.
+comfortable shape for processing and batching.
 
 ## What You'll Learn
 
@@ -24,8 +22,7 @@ The sensor path is now mature enough to deserve production-style handling.
 By now the colony has lived with enough strange readings to know that mystery
 is not the exceptional state of the universe. It is the ordinary one. The real
 question is whether the runtime can meet strangeness with discipline instead of
-thrashing. The better the runtime gets, the less drama it needs to stay
-composed in the presence of the unknown.
+thrashing.
 
 The colony still needs the same high-level steps:
 

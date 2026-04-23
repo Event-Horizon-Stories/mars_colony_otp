@@ -7,7 +7,7 @@ pile up.
 Maintenance requests are the first clear example. They arrive over time, they
 need to be buffered, and the colony needs to know when the queue is becoming a
 problem. Not every form of pressure announces itself with alarms. Some of it
-gathers in lists, delays, and the slow embarrassment of unfinished work.
+gathers in lists and delays.
 
 ## What You'll Learn
 
@@ -26,9 +26,8 @@ way to break. Seals age. Filters clog. Rover joints grind red dust into their
 own patience. The work begins to stack up not because anyone is careless, but
 because survival on Mars is made of wearing things out.
 
-Backlog is what the future looks like when obligations arrive faster than
-strength, and making that visible is one of the colony's first real acts of
-honesty about its own limits.
+Making backlog visible is one of the colony's first honest ways of naming its
+own limits.
 
 Requests arrive from many directions:
 

@@ -5,9 +5,8 @@ next pressure point is no longer detection. It is response.
 
 When something critical happens, the colony needs one place to own the incident
 state, decide what action to take, and leave behind an inspectable record of
-the response. Emergency has a way of scattering attention. This chapter is
-where the colony starts insisting that attention can be gathered back into one
-accountable shape.
+the response. Emergency has a way of scattering attention, so this chapter
+gives the runtime one accountable place to gather it back together.
 
 ## What You'll Learn
 
@@ -28,8 +27,7 @@ bad decision can be revised later. A scattered decision can leave no single
 shape behind, and that is worse.
 
 The system needs somewhere to stand when everything around it begins moving at
-once, and command is the part of the runtime that has to keep meaning intact
-while fear tries to fracture it.
+once.
 
 A serious failure now implies coordination:
 

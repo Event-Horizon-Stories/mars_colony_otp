@@ -23,8 +23,7 @@ Each habitat is starting to feel less like one box and more like a machine made
 of smaller machines.
 
 To live anywhere harsh, a system has to learn the difference between injury and
-death, because a habitat that cannot tell those apart asks every small problem
-to become a catastrophe.
+death.
 
 Three subsystems matter immediately:
 

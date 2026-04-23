@@ -12,8 +12,7 @@ There is one habitat, one crew, and one growing pile of operational questions:
 This lesson stays deliberately local. No processes. No supervisors. No runtime
 identity. The goal is to make the habitat understandable before we make it
 concurrent. The first durable truths of a settlement are never heroic. They are
-counted in air reserves, maintenance debt, and how honestly a room remembers
-its own strain.
+counted in air reserves, maintenance debt, and visible strain.
 
 ## What You'll Learn
 
@@ -32,8 +31,7 @@ species trying to inhabit it. Inside, survival is still intimate: a gauge, a
 log entry, a maintenance note left for the next exhausted pair of hands.
 
 A habitat begins as a discipline of attention before it becomes anything grand
-enough to be called a frontier, because Mars makes ceremony out of ordinary
-care and ordinary care is what keeps the frontier from becoming a graveyard.
+enough to be called a frontier.
 
 Nobody is reasoning about process trees yet. They are trying to answer a
 smaller question first:

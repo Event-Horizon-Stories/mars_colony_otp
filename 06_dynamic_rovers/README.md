@@ -27,8 +27,7 @@ ones. The horizon keeps offering distances that look short until someone has to
 cross them.
 
 The surface is where the colony discovers that survival cannot remain an indoor
-idea forever, and sooner or later every settlement has to decide how it will
-send work into the cold without sending the whole system with it.
+idea forever.
 
 Rovers are the first workers in the series whose lifecycle is driven by demand:
 

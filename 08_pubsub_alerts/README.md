@@ -6,8 +6,7 @@ communication.
 
 Warnings and incidents no longer belong to one caller. If a habitat drops below
 safe pressure or a rover reports distress, multiple parts of the colony may
-need to know about it at once. The colony has reached the age where silence
-itself can become a systems bug.
+need to know about it at once.
 
 ## What You'll Learn
 
@@ -27,9 +26,8 @@ That mercy is gone now. Trouble in one habitat can bend the whole day's work.
 A distress call from the surface can reach engineering, medicine, and command
 before anyone has time to decide how frightened to be.
 
-An alert is never only information. It changes the emotional weather of the
-colony, and once a settlement grows large enough even fear needs a routing
-surface.
+An alert is never only information. Once a settlement grows large enough, it
+needs a routing surface.
 
 One warning can matter to many people:
 

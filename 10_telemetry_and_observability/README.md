@@ -27,8 +27,8 @@ start noticing the shape of that survival. A quiet queue can hide strain for
 days. A loud queue can tell the truth before the shift commander has words for
 it.
 
-That kind of observability matters because what feels stable from the outside
-may already be bending inside.
+That matters because what feels stable from the outside may already be bending
+inside.
 
 Operators want to know:
 

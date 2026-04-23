@@ -5,7 +5,7 @@ transit.
 
 The ship has one pressurized habitat ring, one crew, and one operator watching
 oxygen, water, and power during the long flight in. The numbers repeat so often
-they start to sound ritualistic, because nothing in transit can be wasted.
+they begin to sound like procedure, because nothing in transit can be wasted.
 Outside the hull, space offers no answer back. Inside, even a simple status
 reply feels like proof that order still exists.
 
@@ -31,7 +31,7 @@ The colony ship is still flying toward Mars.
 
 Nothing is a settlement yet. There is no base command tree, no rover fleet, and
 no maintenance district. There is only one transit habitat that has to stay
-alive for the rest of the journey, one moving room held together by routine.
+alive for the rest of the journey.
 
 An operator in the flight deck only needs that habitat loop to do four things:
 
